@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "total_vehicles": 1300,
+    "sim_begin_s": 0.0,
+    "sim_end_s": 4789.0,
+    "duration_s_mean": 169.0069,
+    "duration_s_median": 177.0,
+    "duration_s_p95": 184.0,
+    "timeloss_s_mean": 153.8373,
+    "timeloss_s_p95": 168.682,
+    "waiting_s_mean": 82.0769,
+    "waiting_s_p95": 94.0,
+    "routeLength_m_mean": 194.9,
+    "mean_speed_mps": 1.1532,
+    "throughput_vph": 977.2395
+  }
+}

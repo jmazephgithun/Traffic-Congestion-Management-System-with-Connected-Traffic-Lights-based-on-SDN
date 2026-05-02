@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!-- Define a simple 2-phase TLS for J1 with explicit phase ordering matching the 4 linkIndices -->
+    <!-- one_junction.add.xml -->
+    <tlLogic id="J1" type="static" programID="prog1" offset="0">
+    <phase duration="31" state="GGrr"/>
+    <phase duration="5"  state="yyrr"/>   <!-- 4 -> 5 -->
+    <phase duration="31" state="rrGG"/>
+    <phase duration="5"  state="rryy"/>   <!-- 4 -> 5 -->
+    </tlLogic>
+
+</additional>

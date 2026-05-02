@@ -1,0 +1,64 @@
+<routes>
+  <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5" maxSpeed="13.9"/>
+
+  <!--
+    Scenario ASYMETRIQUE pour montrer l'avantage de l'orchestrateur adaptatif.
+
+    Phase 1 (0-600s) : NS FORT = 250+250 = 500 veh, EW FAIBLE = 75+75 = 150 veh
+    Phase 2 (600-1200s) : inversion : NS FAIBLE = 75+75 = 150, EW FORT = 250+250 = 500
+
+    Cela simule un changement d'heure de pointe.
+
+    Total = 1300 vehicules sur 1200s.
+
+    Avec feux fixes 31s/31s : NS attend trop longtemps au debut,
+    EW attend trop longtemps apres 600s.
+    Avec orchestrateur adaptatif : il donne plus de vert a NS au debut,
+    puis plus de vert a EW apres 600s -> temps d'attente reduit.
+  -->
+
+  <!-- === Phase 1 : 0-600s === NS fort, EW faible -->
+
+  <!-- 250 vehicules N->S sur les 600 premieres secondes -->
+  <flow id="fNS_p1" type="car" from="N2J1" to="J1toS"
+        begin="0" end="600" number="250"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 250 vehicules S->N sur les 600 premieres secondes -->
+  <flow id="fSN_p1" type="car" from="S2J1" to="J1toN"
+        begin="0" end="600" number="250"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 75 vehicules E->W sur les 600 premieres secondes -->
+  <flow id="fEW_p1" type="car" from="E2J1" to="J1toW"
+        begin="0" end="600" number="75"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 75 vehicules W->E sur les 600 premieres secondes -->
+  <flow id="fWE_p1" type="car" from="W2J1" to="J1toE"
+        begin="0" end="600" number="75"
+        departLane="best" departSpeed="max"/>
+
+  <!-- === Phase 2 : 600-1200s === EW fort, NS faible (inversion) -->
+
+  <!-- 75 vehicules N->S -->
+  <flow id="fNS_p2" type="car" from="N2J1" to="J1toS"
+        begin="600" end="1200" number="75"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 75 vehicules S->N -->
+  <flow id="fSN_p2" type="car" from="S2J1" to="J1toN"
+        begin="600" end="1200" number="75"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 250 vehicules E->W -->
+  <flow id="fEW_p2" type="car" from="E2J1" to="J1toW"
+        begin="600" end="1200" number="250"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 250 vehicules W->E -->
+  <flow id="fWE_p2" type="car" from="W2J1" to="J1toE"
+        begin="600" end="1200" number="250"
+        departLane="best" departSpeed="max"/>
+
+</routes>

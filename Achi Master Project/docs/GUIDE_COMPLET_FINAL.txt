@@ -1,0 +1,275 @@
+================================================================================
+         GUIDE COMPLET - ETAT DU PROJET (mis a jour)
+         Systeme SDN de Gestion des Embouteillages
+================================================================================
+
+
+RESULTATS OBTENUS
+================================================================================
+
+PHASE A - Mobilite (SUMO)
+--------------------------
+  Baseline (feux fixes, 1300 veh) :  974 termines  (74.9%)
+  Adaptatif (orchestrateur)       : 1300 termines (100.0%)
+  Gain : +326 vehicules sauves (+33%)
+
+PHASE B - Reseau (Mininet-WiFi + Ryu)
+---------------------------------------
+  Sans QoS (B1) : 68.55% perte, 81.34ms jitter, 0.063 Mbit/s recus
+  Avec QoS  (B2) :  0.00% perte,  0.07ms jitter, 0.205 Mbit/s recus
+  Gain : perte -100%, jitter x1162
+
+
+PHASE A : TESTS SUMO
+================================================================================
+
+Scenario : trafic ASYMETRIQUE 1300 vehicules
+  - Phase 1 (0-600s)   : NS fort (500 veh), EW faible (150 veh)
+  - Phase 2 (600-1200s): EW fort (500 veh), NS faible (150 veh)
+
+Etape 1 : Baseline (feux fixes 31s/31s)
+----------------------------------------
+  $ cd /home/jmazeph/experiments
+  $ bash scripts/LANCER_BASELINE_ASYMMETRIC.sh
+
+  Resultat obtenu : 974/1300 vehicules (74.9%)
+  Fichier : results/tripinfo_baseline_asym.xml
+
+Etape 2 : Adaptatif (orchestrateur)
+-------------------------------------
+  $ cd /home/jmazeph/experiments
+  $ bash scripts/LANCER_ADAPTIVE_ASYMMETRIC.sh
+
+  Resultat obtenu : 1300/1300 vehicules (100%)
+  Fichier : results/tripinfo_adaptive_asym.xml
+
+Etape 3 : Comparaison
+----------------------
+  $ cd /home/jmazeph/experiments
+  $ bash scripts/COMPARER_ASYMMETRIC.sh
+
+  Verification rapide :
+  $ grep -c '<tripinfo ' results/tripinfo_adaptive_asym.xml
+  -> Doit afficher : 1300
+
+  $ grep -c "Switch -> NS_GREEN" results/orchestrator_asym.log
+  $ grep -c "Switch -> EW_GREEN" results/orchestrator_asym.log
+  -> Les deux doivent etre > 0 (alternance)
+
+
+PHASE B : TESTS RESEAU
+================================================================================
+
+Prerequis - Nettoyage avant chaque test
+-----------------------------------------
+  sudo mn -c
+  sudo pkill -9 -f iperf
+  sudo pkill -9 -f ryu-manager
+  sudo ovs-vsctl --all destroy qos
+  sudo ovs-vsctl --all destroy queue
+  sudo rm -f /tmp/ctrl_server_*.log /tmp/bg_server*.log
+
+Note technique critique
+------------------------
+  OVS noyau bypass les regles tc-htb appliquees par TCLink.
+  La limite de bande passante DOIT passer par OVS QoS native :
+    ovs-vsctl set port ap1-eth3 qos=@q ...
+  Le script traffic_topology_corridor.py le fait automatiquement
+  (branche 'else' pour mode sans QoS, branche 'if' pour avec QoS).
+
+
+TEST B1 : Sans QoS (baseline reseau)
+--------------------------------------
+
+Terminal 1 - Ryu :
+  $ cd /home/jmazeph/experiments
+  $ ryu-manager pyfilesTrue/ryu_qos_rest.py
+  -> Attendre : "[Ryu] QoS REST app is up"
+
+Terminal 2 - Topologie :
+  $ cd /home/jmazeph/experiments
+  $ sudo python3 pyfilesTrue/traffic_topology_corridor.py \
+      --bw-edge 5 --delay-edge 5ms
+  -> Attendre mininet-wifi>
+  -> pingall (verifier 0% drop)
+
+Dans Mininet CLI :
+  mininet-wifi> sh rm -f /tmp/ctrl_server_noqos.log /tmp/bg_server*.log
+  mininet-wifi> edge bash -c "iperf -s -u -p 9999 -i 1 > /tmp/ctrl_server_noqos.log 2>&1" &
+  mininet-wifi> edge bash -c "iperf -s -u -p 5001 > /tmp/bg_server.log 2>&1" &
+  mininet-wifi> edge bash -c "iperf -s -u -p 6001 > /tmp/bg_server2.log 2>&1" &
+  mininet-wifi> car2 iperf -c 10.0.0.254 -u -p 5001 -b 8M -t 90 &
+  mininet-wifi> car3 iperf -c 10.0.0.254 -u -p 6001 -b 8M -t 90 &
+  mininet-wifi> car1 iperf -c 10.0.0.254 -u -p 9999 -b 200k -t 90 -i 1
+
+Copier et analyser :
+  mininet-wifi> sh cp /tmp/ctrl_server_noqos.log /home/jmazeph/experiments/ctrl_no_qos/ctrl_server_noqos.log
+  $ cd /home/jmazeph/experiments
+  $ python3 tools/analyze_iperf.py \
+      --log ctrl_no_qos/ctrl_server_noqos.log \
+      --out ctrl_no_qos/ctrl_noqos.json \
+      --csv ctrl_no_qos/ctrl_noqos.csv
+
+  Resultat obtenu : 68.55% perte, 81.34ms jitter
+
+
+TEST B2 : Avec QoS (SDN actif)
+--------------------------------
+
+Terminal 1 - Ryu :
+  $ cd /home/jmazeph/experiments
+  $ ryu-manager pyfilesTrue/ryu_qos_rest.py
+
+Terminal 2 - Topologie avec QoS :
+  $ cd /home/jmazeph/experiments
+  $ sudo python3 pyfilesTrue/traffic_topology_corridor.py \
+      --bw-edge 5 --delay-edge 5ms \
+      --configure-qos
+  -> Attendre mininet-wifi>
+  -> pingall (verifier 0% drop)
+
+Terminal externe - Activer QoS :
+  $ cd /home/jmazeph/experiments
+  $ bash scripts/force_qos_on.sh
+  -> Verifier : "priority_enabled": true
+  $ sudo ovs-ofctl -O OpenFlow13 dump-flows ap1 | grep set_queue
+  -> Verifier : udp,tp_dst=9999 actions=set_queue:1,NORMAL
+
+Dans Mininet CLI :
+  mininet-wifi> sh rm -f /tmp/ctrl_server_qos.log /tmp/bg_server*.log
+  mininet-wifi> edge bash -c "iperf -s -u -p 9999 -i 1 > /tmp/ctrl_server_qos.log 2>&1" &
+  mininet-wifi> edge bash -c "iperf -s -u -p 5001 > /tmp/bg_server_5001.log 2>&1" &
+  mininet-wifi> edge bash -c "iperf -s -u -p 6001 > /tmp/bg_server_6001.log 2>&1" &
+  mininet-wifi> car2 iperf -c 10.0.0.254 -u -p 5001 -b 8M -t 90 &
+  mininet-wifi> car3 iperf -c 10.0.0.254 -u -p 6001 -b 8M -t 90 &
+  mininet-wifi> sh sleep 5
+  mininet-wifi> car1 iperf -c 10.0.0.254 -u -p 9999 -b 200k -t 80 -i 1
+
+Copier et analyser :
+  mininet-wifi> sh cp /tmp/ctrl_server_qos.log /home/jmazeph/experiments/ctrl_no_qos/ctrl_server_qos.log
+  $ cd /home/jmazeph/experiments
+  $ python3 tools/analyze_iperf.py \
+      --log ctrl_no_qos/ctrl_server_qos.log \
+      --out ctrl_no_qos/ctrl_qos.json \
+      --csv ctrl_no_qos/ctrl_qos.csv
+
+  Resultat obtenu : 0% perte, 0.07ms jitter
+
+
+PHASE C : TEST INTEGRE (boucle fermee)
+================================================================================
+
+Terminal 1 - Ryu :
+  $ cd /home/jmazeph/experiments
+  $ ryu-manager pyfilesTrue/ryu_qos_rest.py
+
+Terminal 2 - Topologie :
+  $ cd /home/jmazeph/experiments
+  $ sudo python3 pyfilesTrue/traffic_topology_corridor.py \
+      --bw-edge 5 --delay-edge 5ms --configure-qos
+  -> pingall
+
+Terminal 3 - SUMO + orchestrateur (REALTIME) :
+  $ cd /home/jmazeph/experiments/sumo_one_junction
+  $ sumo -c one_junction_asymmetric.sumocfg \
+      --remote-port 8813 --end 3600 --seed 42 \
+      --time-to-teleport -1 &
+  $ sleep 3
+  $ cd /home/jmazeph/experiments
+  $ sudo python3 pyfilesTrue/tls_orchestrator_CORRECTED.py \
+      --sumo-port 8813 --tls-id J1 \
+      --ns-phase-idx 0 --ew-phase-idx 2 \
+      --min-green 10 --max-green 45 --hysteresis 0.15 \
+      --post-url http://localhost:8080/metrics \
+      --realtime
+
+  -> Attendre ~30-40s que les files se remplissent
+  -> Verifier : curl http://localhost:8080/health -> "priority_enabled": true
+
+Dans Mininet CLI :
+  mininet-wifi> sh rm -f /tmp/ctrl_server_integre.log /tmp/bg_server_integre*.log
+  mininet-wifi> edge bash -c "iperf -s -u -p 9999 -i 1 > /tmp/ctrl_server_integre.log 2>&1" &
+  mininet-wifi> edge bash -c "iperf -s -u -p 5001 > /tmp/bg_server_integre_5001.log 2>&1" &
+  mininet-wifi> edge bash -c "iperf -s -u -p 6001 > /tmp/bg_server_integre_6001.log 2>&1" &
+  mininet-wifi> car2 iperf -c 10.0.0.254 -u -p 5001 -b 8M -t 120 &
+  mininet-wifi> car3 iperf -c 10.0.0.254 -u -p 6001 -b 8M -t 120 &
+  mininet-wifi> car1 iperf -c 10.0.0.254 -u -p 9999 -b 200k -t 120 -i 1
+
+Analyser :
+  mininet-wifi> sh cp /tmp/ctrl_server_integre.log /home/jmazeph/experiments/results/ctrl_server_integre.log
+  $ cd /home/jmazeph/experiments
+  $ python3 tools/analyze_iperf.py \
+      --log results/ctrl_server_integre.log \
+      --out results/ctrl_integre.json \
+      --csv results/ctrl_integre.csv
+
+
+PHASE D : RAPPORT FINAL
+================================================================================
+
+  $ cd /home/jmazeph/experiments
+  $ python3 tools/merge_report.py \
+      --sumo-baseline results/sumo_baseline_asym.json \
+      --sumo-adaptive results/sumo_adaptive_asym.json \
+      --ctrl-noqos ctrl_no_qos/ctrl_noqos.json \
+      --ctrl-qos ctrl_no_qos/ctrl_qos.json \
+      --out results/report.md
+
+
+STRUCTURE DES FICHIERS
+================================================================================
+
+/home/jmazeph/experiments/
+├── pyfilesTrue/
+│   ├── tls_orchestrator_CORRECTED.py   <- orchestrateur adaptatif
+│   ├── ryu_qos_rest.py                 <- controleur Ryu (UDP:9999 -> queue 1)
+│   └── traffic_topology_corridor.py    <- topologie Mininet-WiFi (OVS QoS native)
+├── sumo_one_junction/
+│   ├── routes_asymmetric.rou.xml       <- 1300 veh (scenario principal)
+│   └── one_junction_asymmetric.sumocfg
+├── scripts/
+│   ├── LANCER_BASELINE_ASYMMETRIC.sh
+│   ├── LANCER_ADAPTIVE_ASYMMETRIC.sh
+│   ├── COMPARER_ASYMMETRIC.sh
+│   └── force_qos_on.sh
+├── tools/
+│   ├── analyze_sumo.py
+│   ├── analyze_iperf.py
+│   └── merge_report.py
+├── ctrl_no_qos/                        <- resultats Phase B
+│   ├── ctrl_server_noqos.log + ctrl_noqos.json   (B1 : 68% perte)
+│   └── ctrl_server_qos.log  + ctrl_qos.json      (B2 : 0%  perte)
+└── results/                            <- resultats Phase A + D
+    ├── tripinfo_baseline_asym.xml
+    ├── sumo_baseline_asym.json         (974/1300)
+    ├── tripinfo_adaptive_asym.xml
+    ├── sumo_adaptive_asym.json         (1300/1300)
+    └── report.md
+
+
+PARAMETRES DE L'ORCHESTRATEUR
+================================================================================
+
+  --ns-phase-idx 0    Phase NS_GREEN dans SUMO
+  --ew-phase-idx 2    Phase EW_GREEN dans SUMO
+  --min-green 10      Minimum 10s avant switch
+  --max-green 45      Switch force apres 45s (equite)
+  --hysteresis 0.15   Switch si queue adverse > 115% queue courante
+
+Logique :
+  busy >= 8.0  -> Ryu active QoS (set_queue:1 sur UDP:9999)
+  busy <= 3.0  -> Ryu desactive QoS (hysteresis)
+
+
+================================================================================
+           CHECKLIST FINALE
+================================================================================
+
+  [ ] Phase A B1 : baseline asymetrique executee (974/1300)
+  [ ] Phase A B2 : adaptive executee (1300/1300, alternance visible)
+  [ ] Phase B1   : test sans QoS (68% perte, 81ms jitter confirmes)
+  [ ] Phase B2   : test avec QoS (0% perte, 0.07ms jitter confirmes)
+  [ ] Phase C    : boucle fermee en realtime (priority_enabled=true verifie)
+  [ ] Phase D    : rapport fusionne genere
+
+================================================================================

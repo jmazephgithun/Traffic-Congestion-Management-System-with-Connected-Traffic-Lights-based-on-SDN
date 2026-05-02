@@ -1,0 +1,14 @@
+<configuration>
+  <input>
+    <net-file value="one_junction.net.xml"/>
+    <route-files value="routes_asymmetric.rou.xml"/>
+    <additional-files value="one_junction.add.xml"/>
+  </input>
+  <time>
+    <begin value="0"/>
+    <end value="3600"/>
+  </time>
+  <random_number>
+    <seed value="42"/>
+  </random_number>
+</configuration>

@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "samples": 0,
+    "duration_s": 0.0,
+    "bw_mbps_mean": null,
+    "bw_mbps_p95": null,
+    "bw_mbps_p5": null,
+    "bw_mbps_std": null,
+    "jitter_ms_mean": null,
+    "jitter_ms_p95": null,
+    "loss_pct_mean": null,
+    "loss_pct_p95": null,
+    "role_hint": "client",
+    "note": "Client log detected: iperf2 prints UDP jitter & loss on the server side. Throughput stats are valid; jitter/loss are null. Use the server output to compute those KPIs."
+  },
+  "intervals": []
+}

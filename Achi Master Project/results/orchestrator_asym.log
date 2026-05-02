@@ -1,0 +1,1077 @@
+[orchestrator] Connected to SUMO on port 8813
+[orchestrator] Auto-detected edges. NS=['N2J1', 'S2J1']  EW=['E2J1', 'W2J1']
+[orchestrator] Using FORCED indices: NS=0, EW=2
+[orchestrator] Loop (min=10.0s, max=45.0s, hyst=0.15)
+[orchestrator] Starting with NS_GREEN (phase=0)
+[orchestrator] [  5.00s] queues: NS=  4  EW=  2  phase=0(NS)  elapsed=1.0s
+[orchestrator] [ 10.00s] queues: NS=  7  EW=  3  phase=0(NS)  elapsed=6.0s
+[orchestrator] [ 15.00s] queues: NS=  9  EW=  3  phase=0(NS)  elapsed=11.0s
+[orchestrator] [ 20.00s] queues: NS= 11  EW=  4  phase=0(NS)  elapsed=16.0s
+[orchestrator] [ 25.00s] queues: NS= 15  EW=  5  phase=0(NS)  elapsed=21.0s
+[orchestrator] [ 30.00s] queues: NS= 15  EW=  5  phase=0(NS)  elapsed=26.0s
+[orchestrator] [ 35.00s] queues: NS= 16  EW=  6  phase=0(NS)  elapsed=31.0s
+[orchestrator] [ 40.00s] queues: NS= 18  EW=  6  phase=0(NS)  elapsed=36.0s
+[orchestrator] [ 45.00s] queues: NS= 19  EW=  6  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=20, EW_q=8, elapsed=45.0s]
+[orchestrator] [ 50.00s] queues: NS= 20  EW=  8  phase=2(EW)  elapsed=1.0s
+[orchestrator] [ 55.00s] queues: NS= 22  EW=  7  phase=2(EW)  elapsed=6.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=9, elapsed=10.0s]
+[orchestrator] [ 60.00s] queues: NS= 21  EW=  9  phase=0(NS)  elapsed=1.0s
+[orchestrator] [ 65.00s] queues: NS= 20  EW= 10  phase=0(NS)  elapsed=6.0s
+[orchestrator] [ 70.00s] queues: NS= 21  EW=  9  phase=0(NS)  elapsed=11.0s
+[orchestrator] [ 75.00s] queues: NS= 22  EW= 10  phase=0(NS)  elapsed=16.0s
+[orchestrator] [ 80.00s] queues: NS= 21  EW= 10  phase=0(NS)  elapsed=21.0s
+[orchestrator] [ 85.00s] queues: NS= 22  EW= 11  phase=0(NS)  elapsed=26.0s
+[orchestrator] [ 90.00s] queues: NS= 22  EW= 12  phase=0(NS)  elapsed=31.0s
+[orchestrator] [ 95.00s] queues: NS= 22  EW= 12  phase=0(NS)  elapsed=36.0s
+[orchestrator] [100.00s] queues: NS= 22  EW= 12  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=12, elapsed=45.0s]
+[orchestrator] [105.00s] queues: NS= 22  EW= 14  phase=2(EW)  elapsed=1.0s
+[orchestrator] [110.00s] queues: NS= 22  EW= 13  phase=2(EW)  elapsed=6.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=15, elapsed=10.0s]
+[orchestrator] [115.00s] queues: NS= 21  EW= 15  phase=0(NS)  elapsed=1.0s
+[orchestrator] [120.00s] queues: NS= 20  EW= 14  phase=0(NS)  elapsed=6.0s
+[orchestrator] [125.00s] queues: NS= 21  EW= 15  phase=0(NS)  elapsed=11.0s
+[orchestrator] [130.00s] queues: NS= 22  EW= 17  phase=0(NS)  elapsed=16.0s
+[orchestrator] [135.00s] queues: NS= 21  EW= 16  phase=0(NS)  elapsed=21.0s
+[orchestrator] [140.00s] queues: NS= 22  EW= 17  phase=0(NS)  elapsed=26.0s
+[orchestrator] [145.00s] queues: NS= 22  EW= 17  phase=0(NS)  elapsed=31.0s
+[orchestrator] [150.00s] queues: NS= 22  EW= 17  phase=0(NS)  elapsed=36.0s
+[orchestrator] [155.00s] queues: NS= 22  EW= 16  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=16, elapsed=45.0s]
+[orchestrator] [160.00s] queues: NS= 22  EW= 16  phase=2(EW)  elapsed=1.0s
+[orchestrator] [165.00s] queues: NS= 22  EW= 16  phase=2(EW)  elapsed=6.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=16, elapsed=10.0s]
+[orchestrator] [170.00s] queues: NS= 22  EW= 18  phase=0(NS)  elapsed=1.0s
+[orchestrator] [175.00s] queues: NS= 21  EW= 17  phase=0(NS)  elapsed=6.0s
+[orchestrator] [180.00s] queues: NS= 22  EW= 18  phase=0(NS)  elapsed=11.0s
+[orchestrator] [185.00s] queues: NS= 22  EW= 20  phase=0(NS)  elapsed=16.0s
+[orchestrator] [190.00s] queues: NS= 21  EW= 19  phase=0(NS)  elapsed=21.0s
+[orchestrator] [195.00s] queues: NS= 22  EW= 19  phase=0(NS)  elapsed=26.0s
+[orchestrator] [200.00s] queues: NS= 22  EW= 18  phase=0(NS)  elapsed=31.0s
+[orchestrator] [205.00s] queues: NS= 22  EW= 19  phase=0(NS)  elapsed=36.0s
+[orchestrator] [210.00s] queues: NS= 22  EW= 18  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=18, elapsed=45.0s]
+[orchestrator] [215.00s] queues: NS= 22  EW= 18  phase=2(EW)  elapsed=1.0s
+[orchestrator] [220.00s] queues: NS= 22  EW= 19  phase=2(EW)  elapsed=6.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=18, elapsed=10.0s]
+[orchestrator] [225.00s] queues: NS= 22  EW= 19  phase=0(NS)  elapsed=1.0s
+[orchestrator] [230.00s] queues: NS= 21  EW= 19  phase=0(NS)  elapsed=6.0s
+[orchestrator] [235.00s] queues: NS= 22  EW= 20  phase=0(NS)  elapsed=11.0s
+[orchestrator] [240.00s] queues: NS= 22  EW= 19  phase=0(NS)  elapsed=16.0s
+[orchestrator] [245.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [250.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [255.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=31.0s
+[orchestrator] [260.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [265.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=21, elapsed=45.0s]
+[orchestrator] [270.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=1.0s
+[orchestrator] [275.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [280.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [285.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [290.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [295.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [300.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [305.00s] queues: NS= 23  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [310.00s] queues: NS= 23  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [315.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [320.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [325.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [330.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [335.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [340.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [345.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [350.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [355.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [360.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [365.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [370.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [375.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [380.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [385.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [390.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [395.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [400.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [405.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [410.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [415.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [420.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [425.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [430.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [435.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [440.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [445.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [450.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [455.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [460.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [465.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [470.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [475.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [480.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [485.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [490.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [495.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [500.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [505.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [510.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [515.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [520.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [525.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [530.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [535.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [540.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [545.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [550.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [555.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [560.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [565.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [570.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [575.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [580.00s] queues: NS= 21  EW= 23  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [585.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [590.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [595.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [600.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [605.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [610.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [615.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [620.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [625.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [630.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [635.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [640.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [645.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [650.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [655.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [660.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [665.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [670.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [675.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [680.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [685.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [690.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [695.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [700.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [705.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [710.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [715.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [720.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [725.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [730.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [735.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [740.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [745.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [750.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [755.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [760.00s] queues: NS= 23  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [765.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [770.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [775.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [780.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [785.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [790.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [795.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [800.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [805.00s] queues: NS= 21  EW= 23  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [810.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [815.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [820.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [825.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [830.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [835.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [840.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [845.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [850.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [855.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [860.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [865.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [870.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [875.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [880.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [885.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [890.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [895.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [900.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [905.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [910.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [915.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [920.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [925.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [930.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [935.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [940.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [945.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [950.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [955.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [960.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [965.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [970.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [975.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [980.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [985.00s] queues: NS= 21  EW= 23  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [990.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [995.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1000.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1005.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1010.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1015.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1020.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1025.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1030.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [1035.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1040.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1045.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1050.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1055.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1060.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1065.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1070.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1075.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=21, elapsed=45.0s]
+[orchestrator] [1080.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1085.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1090.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1095.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1100.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1105.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1110.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1115.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1120.00s] queues: NS= 21  EW= 23  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1125.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1130.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1135.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1140.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1145.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1150.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1155.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1160.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1165.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1170.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1175.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1180.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1185.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1190.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1195.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1200.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1205.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1210.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [1215.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1220.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1225.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1230.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1235.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1240.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1245.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1250.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1255.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [1260.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1265.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1270.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1275.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1280.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1285.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1290.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1295.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1300.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1305.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1310.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1315.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1320.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1325.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1330.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1335.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1340.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1345.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1350.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1355.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1360.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1365.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1370.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1375.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1380.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1385.00s] queues: NS= 23  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1390.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [1395.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1400.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1405.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1410.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1415.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1420.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1425.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1430.00s] queues: NS= 23  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1435.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [1440.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1445.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1450.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1455.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1460.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1465.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1470.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1475.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1480.00s] queues: NS= 21  EW= 23  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1485.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1490.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1495.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1500.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1505.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1510.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1515.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1520.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1525.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1530.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1535.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1540.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1545.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1550.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1555.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1560.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1565.00s] queues: NS= 23  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1570.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [1575.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1580.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1585.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1590.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1595.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1600.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1605.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1610.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1615.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1620.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1625.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1630.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1635.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1640.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1645.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1650.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1655.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1660.00s] queues: NS= 21  EW= 23  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1665.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1670.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1675.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1680.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1685.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1690.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1695.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1700.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1705.00s] queues: NS= 20  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1710.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1715.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1720.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1725.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1730.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1735.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1740.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1745.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1750.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [1755.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1760.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1765.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1770.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1775.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1780.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1785.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1790.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1795.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [1800.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1805.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1810.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1815.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1820.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1825.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1830.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1835.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1840.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1845.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1850.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1855.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1860.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1865.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1870.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1875.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1880.00s] queues: NS= 23  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1885.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [1890.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1895.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1900.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1905.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [1910.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [1915.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [1920.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [1925.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [1930.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [1935.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [1940.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [1945.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=11.0s
+[orchestrator] [1950.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [1955.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [1960.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [1965.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [1970.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [1975.00s] queues: NS= 21  EW= 23  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [1980.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [1985.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [1990.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [1995.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2000.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2005.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2010.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2015.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2020.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [2025.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2030.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2035.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2040.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2045.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2050.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2055.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2060.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2065.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2070.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2075.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2080.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2085.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2090.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2095.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2100.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2105.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2110.00s] queues: NS= 20  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2115.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2120.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2125.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2130.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2135.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2140.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2145.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2150.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2155.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [2160.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2165.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2170.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2175.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2180.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2185.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2190.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2195.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2200.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2205.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2210.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2215.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2220.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2225.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2230.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2235.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2240.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2245.00s] queues: NS= 20  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2250.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2255.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2260.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2265.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2270.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2275.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2280.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2285.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2290.00s] queues: NS= 23  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2295.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2300.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2305.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2310.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2315.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2320.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2325.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2330.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2335.00s] queues: NS= 21  EW= 23  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2340.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2345.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2350.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2355.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2360.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2365.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2370.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2375.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2380.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2385.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2390.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2395.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2400.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2405.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2410.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2415.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2420.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2425.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2430.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2435.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2440.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2445.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2450.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2455.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2460.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2465.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2470.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2475.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2480.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2485.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2490.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2495.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2500.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2505.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2510.00s] queues: NS= 23  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2515.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2520.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2525.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2530.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2535.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2540.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2545.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2550.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2555.00s] queues: NS= 23  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2560.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [2565.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2570.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2575.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2580.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2585.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2590.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2595.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2600.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2605.00s] queues: NS= 21  EW= 23  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2610.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2615.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2620.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2625.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2630.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2635.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2640.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2645.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2650.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2655.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2660.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2665.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2670.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2675.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2680.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2685.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2690.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2695.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2700.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2705.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2710.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2715.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2720.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2725.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2730.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2735.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2740.00s] queues: NS= 20  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [2745.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2750.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2755.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2760.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2765.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2770.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2775.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2780.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2785.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2790.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2795.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2800.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2805.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2810.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2815.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2820.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2825.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2830.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2835.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2840.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2845.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2850.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2855.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2860.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2865.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2870.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2875.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2880.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2885.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2890.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2895.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2900.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2905.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [2910.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [2915.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [2920.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2925.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [2930.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [2935.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=11.0s
+[orchestrator] [2940.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [2945.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [2950.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [2955.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [2960.00s] queues: NS= 23  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [2965.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [2970.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [2975.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [2980.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [2985.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [2990.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [2995.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3000.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3005.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3010.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3015.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3020.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3025.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3030.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3035.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3040.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3045.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3050.00s] queues: NS= 23  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3055.00s] queues: NS= 23  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [3060.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3065.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3070.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3075.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3080.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3085.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3090.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3095.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3100.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3105.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3110.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3115.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3120.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3125.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3130.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3135.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3140.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3145.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3150.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3155.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3160.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3165.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3170.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3175.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3180.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3185.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3190.00s] queues: NS= 21  EW= 23  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3195.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3200.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3205.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3210.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3215.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3220.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3225.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3230.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3235.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=21, elapsed=45.0s]
+[orchestrator] [3240.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3245.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3250.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3255.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3260.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3265.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3270.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3275.00s] queues: NS= 23  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3280.00s] queues: NS= 23  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [3285.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3290.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3295.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3300.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3305.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3310.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3315.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3320.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3325.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3330.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3335.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3340.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3345.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3350.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3355.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3360.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3365.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3370.00s] queues: NS= 21  EW= 23  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3375.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3380.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3385.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3390.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3395.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3400.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3405.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3410.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3415.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [3420.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3425.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3430.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3435.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3440.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3445.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3450.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3455.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3460.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [3465.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3470.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3475.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3480.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3485.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3490.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3495.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3500.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3505.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [3510.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3515.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3520.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3525.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3530.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3535.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3540.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3545.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3550.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [3555.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3560.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3565.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3570.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3575.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3580.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3585.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3590.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3595.00s] queues: NS= 21  EW= 23  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3600.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3605.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3610.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3615.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3620.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3625.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3630.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3635.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3640.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=23, EW_q=21, elapsed=45.0s]
+[orchestrator] [3645.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3650.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3655.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3660.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3665.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3670.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3675.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3680.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3685.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3690.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3695.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3700.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3705.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3710.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3715.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3720.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3725.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3730.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3735.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3740.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3745.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3750.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3755.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3760.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3765.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3770.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3775.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [3780.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3785.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3790.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3795.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3800.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3805.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3810.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3815.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3820.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [3825.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3830.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3835.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3840.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3845.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3850.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3855.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3860.00s] queues: NS= 23  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3865.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [3870.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3875.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3880.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3885.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3890.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3895.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3900.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3905.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [3910.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [3915.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [3920.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [3925.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [3930.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [3935.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [3940.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [3945.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [3950.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [3955.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [3960.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [3965.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [3970.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [3975.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [3980.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [3985.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [3990.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [3995.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4000.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [4005.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4010.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [4015.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [4020.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [4025.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [4030.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [4035.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [4040.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [4045.00s] queues: NS= 20  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [4050.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4055.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4060.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4065.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4070.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4075.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4080.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4085.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4090.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [4095.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4100.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [4105.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [4110.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [4115.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [4120.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [4125.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=31.0s
+[orchestrator] [4130.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [4135.00s] queues: NS= 22  EW= 20  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=22, EW_q=21, elapsed=45.0s]
+[orchestrator] [4140.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4145.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4150.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4155.00s] queues: NS= 21  EW= 21  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4160.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4165.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4170.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4175.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4180.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=21, elapsed=45.0s]
+[orchestrator] [4185.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4190.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [4195.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=11.0s
+[orchestrator] [4200.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [4205.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [4210.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [4215.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [4220.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [4225.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [4230.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4235.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4240.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4245.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4250.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4255.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4260.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4265.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4270.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [4275.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4280.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [4285.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [4290.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [4295.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [4300.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [4305.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [4310.00s] queues: NS= 22  EW= 23  phase=0(NS)  elapsed=36.0s
+[orchestrator] [4315.00s] queues: NS= 21  EW= 23  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [4320.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4325.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4330.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4335.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4340.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4345.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4350.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4355.00s] queues: NS= 23  EW= 22  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4360.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=22, EW_q=22, elapsed=45.0s]
+[orchestrator] [4365.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4370.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=6.0s
+[orchestrator] [4375.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [4380.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [4385.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=21.0s
+[orchestrator] [4390.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=26.0s
+[orchestrator] [4395.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=31.0s
+[orchestrator] [4400.00s] queues: NS= 23  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [4405.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=23, EW_q=22, elapsed=45.0s]
+[orchestrator] [4410.00s] queues: NS= 22  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4415.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4420.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4425.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4430.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4435.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4440.00s] queues: NS= 21  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4445.00s] queues: NS= 22  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4450.00s] queues: NS= 22  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=21, EW_q=22, elapsed=45.0s]
+[orchestrator] [4455.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4460.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] [4465.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=11.0s
+[orchestrator] [4470.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=16.0s
+[orchestrator] [4475.00s] queues: NS= 22  EW= 22  phase=0(NS)  elapsed=21.0s
+[orchestrator] [4480.00s] queues: NS= 22  EW= 21  phase=0(NS)  elapsed=26.0s
+[orchestrator] [4485.00s] queues: NS= 21  EW= 21  phase=0(NS)  elapsed=31.0s
+[orchestrator] [4490.00s] queues: NS= 21  EW= 22  phase=0(NS)  elapsed=36.0s
+[orchestrator] [4495.00s] queues: NS= 20  EW= 21  phase=0(NS)  elapsed=41.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=20, EW_q=21, elapsed=45.0s]
+[orchestrator] [4500.00s] queues: NS= 19  EW= 21  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4505.00s] queues: NS= 19  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4510.00s] queues: NS= 19  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4515.00s] queues: NS= 18  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4520.00s] queues: NS= 19  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4525.00s] queues: NS= 19  EW= 22  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4530.00s] queues: NS= 18  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4535.00s] queues: NS= 19  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4540.00s] queues: NS= 18  EW= 22  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=18, EW_q=22, elapsed=45.0s]
+[orchestrator] [4545.00s] queues: NS= 18  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4550.00s] queues: NS= 18  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=17, EW_q=22, elapsed=10.0s]
+[orchestrator] [4555.00s] queues: NS= 17  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4560.00s] queues: NS= 15  EW= 22  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4565.00s] queues: NS= 15  EW= 22  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4570.00s] queues: NS= 15  EW= 22  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4575.00s] queues: NS= 15  EW= 22  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4580.00s] queues: NS= 14  EW= 23  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4585.00s] queues: NS= 15  EW= 22  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4590.00s] queues: NS= 16  EW= 23  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4595.00s] queues: NS= 15  EW= 21  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=16, EW_q=22, elapsed=45.0s]
+[orchestrator] [4600.00s] queues: NS= 15  EW= 22  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4605.00s] queues: NS= 15  EW= 21  phase=0(NS)  elapsed=6.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=14, EW_q=21, elapsed=10.0s]
+[orchestrator] [4610.00s] queues: NS= 14  EW= 22  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4615.00s] queues: NS= 13  EW= 21  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4620.00s] queues: NS= 12  EW= 20  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4625.00s] queues: NS= 11  EW= 20  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4630.00s] queues: NS= 12  EW= 20  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4635.00s] queues: NS= 11  EW= 20  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4640.00s] queues: NS= 10  EW= 20  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4645.00s] queues: NS= 10  EW= 21  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4650.00s] queues: NS=  8  EW= 20  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=8, EW_q=20, elapsed=45.0s]
+[orchestrator] [4655.00s] queues: NS=  8  EW= 20  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4660.00s] queues: NS=  8  EW= 19  phase=0(NS)  elapsed=6.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=8, EW_q=17, elapsed=10.0s]
+[orchestrator] [4665.00s] queues: NS=  7  EW= 16  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4670.00s] queues: NS=  7  EW= 15  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4675.00s] queues: NS=  6  EW= 15  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4680.00s] queues: NS=  6  EW= 15  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4685.00s] queues: NS=  5  EW= 14  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4690.00s] queues: NS=  4  EW= 14  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4695.00s] queues: NS=  4  EW= 13  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4700.00s] queues: NS=  4  EW= 13  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4705.00s] queues: NS=  4  EW= 11  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=4, EW_q=10, elapsed=45.0s]
+[orchestrator] [4710.00s] queues: NS=  4  EW=  9  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4715.00s] queues: NS=  4  EW=  8  phase=0(NS)  elapsed=6.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=4, EW_q=8, elapsed=10.0s]
+[orchestrator] [4720.00s] queues: NS=  3  EW=  7  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4725.00s] queues: NS=  3  EW=  6  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4730.00s] queues: NS=  2  EW=  6  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4735.00s] queues: NS=  1  EW=  5  phase=2(EW)  elapsed=16.0s
+[orchestrator] [4740.00s] queues: NS=  1  EW=  4  phase=2(EW)  elapsed=21.0s
+[orchestrator] [4745.00s] queues: NS=  0  EW=  4  phase=2(EW)  elapsed=26.0s
+[orchestrator] [4750.00s] queues: NS=  0  EW=  3  phase=2(EW)  elapsed=31.0s
+[orchestrator] [4755.00s] queues: NS=  0  EW=  3  phase=2(EW)  elapsed=36.0s
+[orchestrator] [4760.00s] queues: NS=  0  EW=  3  phase=2(EW)  elapsed=41.0s
+[orchestrator] Switch -> NS_GREEN (phase=0) [NS_q=0, EW_q=3, elapsed=45.0s]
+[orchestrator] [4765.00s] queues: NS=  0  EW=  3  phase=0(NS)  elapsed=1.0s
+[orchestrator] [4770.00s] queues: NS=  0  EW=  3  phase=0(NS)  elapsed=6.0s
+[orchestrator] Switch -> EW_GREEN (phase=2) [NS_q=0, EW_q=3, elapsed=10.0s]
+[orchestrator] [4775.00s] queues: NS=  0  EW=  2  phase=2(EW)  elapsed=1.0s
+[orchestrator] [4780.00s] queues: NS=  0  EW=  1  phase=2(EW)  elapsed=6.0s
+[orchestrator] [4785.00s] queues: NS=  0  EW=  0  phase=2(EW)  elapsed=11.0s
+[orchestrator] [4790.00s] queues: NS=  0  EW=  0  phase=2(EW)  elapsed=16.0s
+[orchestrator] SUMO finished.
