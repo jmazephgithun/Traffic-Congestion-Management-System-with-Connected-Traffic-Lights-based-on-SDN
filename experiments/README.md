@@ -2,6 +2,8 @@
 
 Ce dossier est le point d’entrée unique de tous les tests du mémoire. Toutes les commandes ci-dessous se lancent depuis ce dossier et écrivent leurs résultats dans `results_docker/`. Le scénario combine SUMO/TraCI, l’orchestrateur de feux, Ryu/OpenFlow, Open vSwitch, HTB et des véhicules représentés par des namespaces.
 
+Voir aussi [ARCHITECTURE.md](ARCHITECTURE.md) pour le rôle des composants et les flux de décision.
+
 ## 1. Prérequis et préparation
 
 - Linux avec `/dev/net/tun` ;
