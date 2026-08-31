@@ -1,0 +1,24 @@
+<routes>
+  <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5" maxSpeed="13.9"/>
+
+  <!-- 232 vehicles N->S over 20 min -->
+  <flow id="fNS" type="car" from="N2J1" to="J1toS"
+        begin="0" end="1200" number="232"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 232 vehicles S->N -->
+  <flow id="fSN" type="car" from="S2J1" to="J1toN"
+        begin="0" end="1200" number="232"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 232 vehicles E->W -->
+  <flow id="fEW" type="car" from="E2J1" to="J1toW"
+        begin="0" end="1200" number="232"
+        departLane="best" departSpeed="max"/>
+
+  <!-- 232 vehicles W->E -->
+  <flow id="fWE" type="car" from="W2J1" to="J1toE"
+        begin="0" end="1200" number="232"
+        departLane="best" departSpeed="max"/>
+</routes>
+

@@ -1,0 +1,31 @@
+services:
+  lab:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: memoire3-experiment:local
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    security_opt:
+      - apparmor=unconfined
+    environment:
+      BW_EDGE: ${BW_EDGE:-5}
+      DELAY_EDGE: ${DELAY_EDGE:-5ms}
+    volumes:
+      - ./results_docker:/experiments/results_docker
+    stop_grace_period: 10s
+
+  tests:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: memoire3-experiment:local
+    environment:
+      SKIP_NETWORK: "1"
+    volumes:
+      - ./results_docker:/experiments/results_docker
+    command: ["python", "-m", "unittest", "discover", "-s", "tests", "-v"]

@@ -1,0 +1,15 @@
+<configuration>
+  <input>
+    <net-file value="one_junction.net.xml"/>
+    <route-files value="locked.rou.xml"/>
+    <additional-files value="one_junction.add.xml"/>
+  </input>
+  <time>
+    <begin value="0"/>
+    <end value="1200"/> <!-- we’ll override this for baseline run below -->
+  </time>
+  <random_number>
+    <seed value="42"/>
+  </random_number>
+</configuration>
+

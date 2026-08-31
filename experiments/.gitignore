@@ -1,0 +1,3 @@
+results_docker/
+**/__pycache__/
+*.pyc

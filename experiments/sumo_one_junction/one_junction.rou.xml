@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="car" accel="1.5" decel="4.0" tau="1.2" sigma="0.2" length="5.0" minGap="2.5" maxSpeed="13.9"/>
+
+    <!-- Straight-only routes (simplifies TLS logic) -->
+    <route id="rNS" edges="N2J1 J1toS"/>
+    <route id="rSN" edges="S2J1 J1toN"/>
+    <route id="rEW" edges="E2J1 J1toW"/>
+    <route id="rWE" edges="W2J1 J1toE"/>
+
+    <!-- Flows: ~600 veh/h per approach for a light but visible load -->
+    <flow id="fNS" route="rNS" begin="0" end="3600" vehsPerHour="600" type="car"/>
+    <flow id="fSN" route="rSN" begin="0" end="3600" vehsPerHour="600" type="car"/>
+    <flow id="fEW" route="rEW" begin="0" end="3600" vehsPerHour="600" type="car"/>
+    <flow id="fWE" route="rWE" begin="0" end="3600" vehsPerHour="600" type="car"/>
+</routes>

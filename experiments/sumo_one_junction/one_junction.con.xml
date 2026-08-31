@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/connections_file.xsd">
+    <!-- Order matters: NS pair first, then EW pair -->
+    <connection from="N2J1" to="J1toS"/>
+    <connection from="S2J1" to="J1toN"/>
+    <connection from="E2J1" to="J1toW"/>
+    <connection from="W2J1" to="J1toE"/>
+</connections>
