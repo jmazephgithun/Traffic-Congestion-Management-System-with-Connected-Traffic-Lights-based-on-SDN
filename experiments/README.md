@@ -4,6 +4,8 @@ Ce dossier est le point d’entrée unique de tous les tests du mémoire. Toutes
 
 Voir aussi [ARCHITECTURE.md](ARCHITECTURE.md) pour le rôle des composants et les flux de décision.
 
+Les dernières mesures réellement exécutées, ainsi que leurs limites d’interprétation, sont consignées dans [VALIDATION.md](VALIDATION.md).
+
 ## 1. Prérequis et préparation
 
 - Linux avec `/dev/net/tun` ;

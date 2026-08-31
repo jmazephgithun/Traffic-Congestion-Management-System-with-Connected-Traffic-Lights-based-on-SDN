@@ -26,6 +26,9 @@ make all-tests
 Les détails des composants et des échanges sont présentés dans
 [`experiments/ARCHITECTURE.md`](experiments/ARCHITECTURE.md).
 
+Le rapport des tests effectivement exécutés est disponible dans
+[`experiments/VALIDATION.md`](experiments/VALIDATION.md).
+
 Les résultats sont produits localement dans `experiments/results_docker/` et ne
 sont pas versionnés. Les prérequis et limites expérimentales, notamment la portée
 de l’émulation Wi-Fi, sont détaillés dans le README du dossier.
