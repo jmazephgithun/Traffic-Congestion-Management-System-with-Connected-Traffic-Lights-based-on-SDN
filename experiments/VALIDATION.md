@@ -19,6 +19,7 @@ make rapport
 make test-secteurs
 make demo && make replay && make test-solibra
 make evaluation-equitable
+make montee-en-charge
 ```
 
 Toutes ces commandes se sont terminées avec le code de sortie `0`. Tests unitaires : 4/4 réussis.
@@ -127,6 +128,63 @@ entre les axes sous la capacité (orchestrateur v2). En saturation extrême (J1 
 du mémoire, Solibra), aucun plan de feux ne crée de capacité et les écarts restent faibles ;
 l’orchestrateur v2 vide toutefois Solibra plus tôt (5 534 s contre 7 486 s). Une partie de
 l’avance de l’orchestrateur du mémoire sur la v2 vient de l’absence de phase orange.
+
+### Montée en charge (`make montee-en-charge`, 5 graines par palier, 425 simulations)
+
+La demande de chaque scénario est multipliée de ×0,1 à ×4, soit de 328 à 11 704 véhicules.
+Chaque simulation va jusqu’à la sortie du dernier véhicule ; l’écart compare le retard total
+de l’orchestrateur v2 à celui des feux fixes, graine par graine.
+
+![Écart de retard de l’orchestrateur v2 par rapport aux feux fixes](docs/captures/montee_en_charge_ecart.png)
+
+#### Carrefour J1, phases corrigées (Nord+Sud / Est+Ouest), demande du mémoire
+
+
+| Facteur | Véhicules | Feux fixes (s) | Webster (s) | Adaptatif mémoire (s) | Adaptatif v2 (s) | Écart v2 / fixes |
+|---:|---:|---:|---:|---:|---:|---:|
+| ×0,25 | 328 | 16 | 13 | 2 | 8 | -46,4 % |
+| ×0,5 | 652 | 23 | 44 | 6 | 13 | -44,2 % |
+| ×0,75 | 976 | 141 | 193 | 9 | 72 | -49,0 % |
+| ×1 | 1 300 | 290 | 365 | 194 | 229 | -21,0 % |
+| ×1,5 | 1 952 | 603 | 708 | 646 | 615 | 1,9 % |
+| ×2 | 2 600 | 961 | 1 128 | 1 071 | 990 | 3,0 % |
+| ×3 | 3 900 | 1 741 | 2 000 | 1 912 | 1 745 | 0,2 % |
+| ×4 | 5 200 | 2 517 | 2 862 | 2 748 | 2 484 | -1,3 % |
+
+#### Alternance sous la capacité (J1 aux phases corrigées, 1 736 véhicules, Y = 0,72)
+
+
+| Facteur | Véhicules | Feux fixes (s) | Webster (s) | Adaptatif mémoire (s) | Adaptatif v2 (s) | Écart v2 / fixes |
+|---:|---:|---:|---:|---:|---:|---:|
+| ×0,25 | 440 | 15 | 22 | 5 | 5 | -67,2 % |
+| ×0,5 | 872 | 17 | 24 | 6 | 10 | -44,2 % |
+| ×0,75 | 1 304 | 23 | 30 | 6 | 12 | -45,9 % |
+| ×1 | 1 736 | 101 | 87 | 8 | 22 | -77,8 % |
+| ×1,5 | 2 608 | 479 | 395 | 426 | 422 | -11,9 % |
+| ×2 | 3 472 | 938 | 811 | 1 011 | 926 | -1,2 % |
+| ×3 | 5 208 | 1 922 | 1 719 | 2 151 | 1 928 | 0,3 % |
+| ×4 | 6 944 | 2 957 | 2 690 | 3 267 | 2 911 | -1,5 % |
+
+#### Carrefour réel de Solibra (saturé, 5 852 véhicules)
+
+
+| Facteur | Véhicules | Feux fixes (s) | Webster (s) | Adaptatif mémoire (s) | Adaptatif v2 (s) | Écart v2 / fixes |
+|---:|---:|---:|---:|---:|---:|---:|
+| ×0,1 | 588 | 24 | n/d | 16 | 16 | -33,0 % |
+| ×0,25 | 1 464 | 275 | n/d | 182 | 165 | -39,9 % |
+| ×0,5 | 2 928 | 856 | n/d | 718 | 806 | -5,9 % |
+| ×0,75 | 4 392 | 1 452 | n/d | 1 324 | 1 460 | 0,6 % |
+| ×1 | 5 852 | 2 120 | n/d | 1 943 | 2 108 | -0,6 % |
+| ×1,5 | 8 780 | 3 476 | n/d | 3 249 | 3 414 | -1,8 % |
+| ×2 | 11 704 | 4 826 | n/d | 4 528 | 4 727 | -2,0 % |
+
+**Lecture.** Tant que la demande reste sous la capacité du carrefour, la commande adaptative
+réduit fortement le retard : de 44 à 49 % sur J1 aux phases corrigées jusqu’à 976 véhicules,
+de 44 à 78 % en demande alternée jusqu’à 1 736 véhicules, de 33 à 40 % sur Solibra jusqu’à
+1 464 véhicules. Au-delà de la capacité, toutes les politiques convergent, avec des écarts
+de quelques pour cent : la commande des feux répartit le vert, elle ne crée pas de
+capacité. Le Webster de chaque scénario est réglé pour la demande nominale et n’est pas
+recalculé à chaque palier, comme un plan fixe installé sur le terrain.
 
 ### Phase B, tableau 3.5 (120 s, flux de contrôle à 200 kbit/s, 16 Mbit/s de fond sur 5 Mbit/s)
 

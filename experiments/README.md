@@ -139,7 +139,7 @@ cd Traffic-Congestion-Management-System-with-Connected-Traffic-Lights-based-on-S
 make build          # construit l'image (une seule fois)
 make test           # tests unitaires des analyseurs
 make memoire        # niveau 1 complet, environ 30 minutes
-make evolue         # niveau 2, environ 20 minutes
+make evolue         # niveau 2, environ 2 heures (montée en charge comprise)
 make help           # rappel des cibles
 ```
 
@@ -235,6 +235,7 @@ signalée comme telle, jamais complétée.
 
 | Cible | Objet | Sortie |
 |---|---|---|
+| `make montee-en-charge` | Demande multipliée palier par palier, jusqu’à 11 704 véhicules : courbes du retard par politique | `montee-en-charge.md`, `.svg` |
 | `make evaluation-equitable` | Comparaison des politiques de feux à base égale, sur 30 graines et 4 scénarios | `evaluation-equitable.json`, `.md` |
 | `make demo` | Démonstration visuelle commentée sur la carte réelle de Solibra | `demo.html`, `interpretation.md` |
 | `make gui` | Interface graphique réelle de SUMO dans le navigateur, feux pilotés en direct | http://localhost:6080 |
@@ -313,6 +314,30 @@ véhicules qui attendent d’entrer dans le réseau, rend le vert dès que l’a
 ne le donne jamais à un axe vide, et respecte la phase orange du programme. Les résultats
 mesurés figurent dans [VALIDATION.md](VALIDATION.md).
 
+### 4.5 Montée en charge
+
+Une mesure isolée ne dit pas dans quelles conditions la commande adaptative est utile.
+`make montee-en-charge` multiplie la demande de chaque scénario (option `--scale` de SUMO,
+qui conserve le profil asymétrique et l’alternance des pointes), du trafic léger jusqu’à
+plusieurs fois la capacité du carrefour :
+
+| Scénario | Paliers par défaut | Véhicules |
+|---|---|---|
+| `j1_corrige` | ×0,25 à ×4 | 325 à 5 200 |
+| `alternance` | ×0,25 à ×4 | 434 à 6 944 |
+| `solibra` | ×0,1 à ×2 | 585 à 11 704 |
+
+Pour chaque palier, les quatre politiques sont rejouées sur 5 graines (`SEEDS_CHARGE`),
+chaque simulation allant jusqu’à la sortie du dernier véhicule. Le résultat est une courbe
+par scénario, `results_docker/montee-en-charge-<scénario>.svg`, reprise dans la
+démonstration. Pour aller plus loin : `make montee-en-charge FACTEURS=1,4,8,16` (les
+grands facteurs sur Solibra demandent plusieurs dizaines de minutes par simulation).
+
+![Écart de retard de l’orchestrateur v2 par rapport aux feux fixes, selon le nombre de véhicules](docs/captures/montee_en_charge_ecart.png)
+
+*Sous la capacité du carrefour, l’orchestrateur v2 réduit le retard de 30 à 78 % ; au-delà,
+toutes les politiques convergent. Détail par palier dans [VALIDATION.md](VALIDATION.md).*
+
 ## 5. Paramètres
 
 | Variable | Défaut | Rôle |
@@ -327,6 +352,7 @@ mesurés figurent dans [VALIDATION.md](VALIDATION.md).
 | `SUMO_CFG` | carrefour de Solibra | Configuration ouverte par `make gui` |
 | `MODE` | `adaptatif` | `make gui` : `adaptatif` ou `fixe` |
 | `SUMO_DELAY` | `60` | `make gui` : délai entre deux pas affichés, en ms |
+| `SEEDS_CHARGE`, `FACTEURS` | `42,1-4`, paliers par défaut | `make montee-en-charge` : graines et multiplicateurs de demande |
 | `SEEDS` | `42,1-29` | `make evaluation-equitable` : graines (ex. `SEEDS=42` pour un essai rapide) |
 
 Exemple : `BW_EDGE=3 DELAY_EDGE=20ms DURATION=60 make test-b2`.
@@ -347,6 +373,7 @@ Tout est écrit dans `results_docker/`, monté depuis l’hôte et exclu de Git.
 | `secteurs.json`, `secteurs/` | Résultat et journaux du prototype par secteur |
 | `demo.html`, `interpretation.md` | Démonstration visuelle et interprétation automatique |
 | `evaluation-equitable.json`, `.md` | Comparaison à base égale, par scénario et par politique |
+| `montee-en-charge.json`, `.md`, `-*.svg` | Montée en charge : tableaux et courbes |
 | `datapath.txt` | Datapath Open vSwitch utilisé en phase B (`system` ou `netdev`) |
 
 ## 7. Organisation du code

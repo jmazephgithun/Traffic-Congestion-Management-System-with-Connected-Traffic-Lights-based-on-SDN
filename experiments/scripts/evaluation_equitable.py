@@ -36,13 +36,15 @@ SUMO = ROOT / "sumo_one_junction"
 ORCH = {"adaptatif_memoire": ROOT / "pyfilesTrue" / "tls_orchestrator_CORRECTED.py",
         "adaptatif_v2": ROOT / "pyfilesTrue" / "tls_orchestrator_v2.py"}
 SCENARIOS = {
-    "j1": {"titre": "Carrefour J1 du mémoire (saturé, 1 300 véhicules)",
+    "j1": {"titre": "Carrefour J1 du mémoire (saturé, 1 300 véhicules)", "court": "J1 du mémoire",
            "fixe": "one_junction_asymmetric.sumocfg", "webster": "one_junction_asymmetric_webster.sumocfg"},
-    "solibra": {"titre": "Carrefour réel de Solibra (saturé, 5 852 véhicules)",
+    "solibra": {"titre": "Carrefour réel de Solibra (saturé, 5 852 véhicules)", "court": "Solibra (carte réelle)",
                 "fixe": "one_junction_asymmetric_solibra.sumocfg", "webster": None},
     "j1_corrige": {"titre": "Carrefour J1, phases corrigées (Nord+Sud / Est+Ouest), demande du mémoire",
+                   "court": "J1 aux phases corrigées",
                    "fixe": "one_junction_corrige.sumocfg", "webster": "one_junction_corrige_webster.sumocfg"},
     "alternance": {"titre": "Alternance sous la capacité (J1 aux phases corrigées, 1 736 véhicules, Y = 0,72)",
+                   "court": "Demande alternée",
                    "fixe": "one_junction_alternance.sumocfg", "webster": "one_junction_alternance_webster.sumocfg"},
 }
 POLITIQUES = ["fixe", "webster", "adaptatif_memoire", "adaptatif_v2"]
@@ -65,13 +67,13 @@ def port_libre():
         return s.getsockname()[1]
 
 
-def executer(scenario, politique, graine):
+def executer(scenario, politique, graine, echelle=1.0):
     cfg = SCENARIOS[scenario]["webster" if politique == "webster" else "fixe"]
     with tempfile.TemporaryDirectory() as tmp:
         trip = Path(tmp) / "trip.xml"
         cmd = ["sumo", "-c", str(SUMO / cfg), "--seed", str(graine), "--end", "40000",
                "--time-to-teleport", "-1", "--tripinfo-output", str(trip), "--no-warnings", "true",
-               "--no-step-log", "true"]
+               "--no-step-log", "true", "--scale", str(echelle)]
         if politique in ORCH:
             port = port_libre()
             sumo = subprocess.Popen(cmd + ["--remote-port", str(port)], cwd=SUMO,
@@ -87,7 +89,7 @@ def executer(scenario, politique, graine):
         v = [(float(e.get("arrival")), float(e.get("departDelay")), float(e.get("timeLoss")),
               float(e.get("waitingTime"))) for _, e in ET.iterparse(trip) if e.tag == "tripinfo"]
     arr = [x[0] for x in v]
-    return {"scenario": scenario, "politique": politique, "graine": graine, "vehicules": len(v),
+    return {"scenario": scenario, "politique": politique, "graine": graine, "echelle": echelle, "vehicules": len(v),
             "retard_total_s": statistics.mean(x[1] + x[2] for x in v),
             "attente_reseau_s": statistics.mean(x[3] for x in v),
             "vidage_s": max(arr),

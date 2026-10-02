@@ -1,7 +1,7 @@
 .PHONY: help build test smoke memoire evolue all-tests \
         test-a1 test-a1w test-a2 test-a3 evaluate evaluate-30 \
         test-b1 test-b2 test-b3 test-c test-c30 rapport test-d \
-        test-solibra replay gui test-secteurs demo evaluation-equitable clean
+        test-solibra replay gui test-secteurs demo evaluation-equitable montee-en-charge clean
 
 COMPOSE := docker compose
 RUN     := $(COMPOSE) run --rm
@@ -71,6 +71,12 @@ SEEDS ?= 42,1-29
 evaluation-equitable: results_docker
 	$(RUN_SIM) lab python scripts/evaluation_equitable.py --seeds $(SEEDS) --output results_docker/evaluation-equitable.json
 
+# Montee en charge : demande multipliee par palier (FACTEURS=0.5,1,2,4,8 pour imposer ses paliers).
+SEEDS_CHARGE ?= 42,1-4
+FACTEURS ?=
+montee-en-charge: results_docker
+	$(RUN_SIM) lab python scripts/montee_en_charge.py --seeds $(SEEDS_CHARGE) $(if $(FACTEURS),--facteurs $(FACTEURS)) --output results_docker/montee-en-charge.json
+
 test-solibra: results_docker
 	$(RUN_SIM) lab python scripts/evaluate.py --plan solibra --seeds 42,1-29 --output results_docker/solibra-30.json
 
@@ -88,7 +94,7 @@ gui:
 test-secteurs: results_docker
 	$(RUN_SIM) lab bash docker/test_secteurs.sh
 
-evolue: build evaluation-equitable test-secteurs test-solibra replay demo
+evolue: build evaluation-equitable montee-en-charge test-secteurs test-solibra replay demo
 	@echo "Niveau 2 termine : demo.html, secteurs.json, solibra-30.json, replay.html ; en direct : make gui"
 
 all-tests: memoire evolue

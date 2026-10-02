@@ -183,6 +183,26 @@ def interpretation(sims):
                      f"{len(eq['protocole']['graines'])} graines) : " + " ; ".join(morceaux) + ". "
                      "La commande adaptative réduit nettement le retard tant que le carrefour n’est pas saturé "
                      "au-delà de sa capacité ; en saturation extrême, aucun plan de feux ne crée de capacité.")
+    mc = charger("montee-en-charge.json")
+    if mc:
+        for sc, lib in (("j1_corrige", "carrefour J1 aux phases corrigées"), ("alternance", "demande alternée"),
+                        ("solibra", "carrefour réel de Solibra")):
+            paliers = mc["synthese"].get(sc)
+            if not paliers:
+                continue
+            pts = sorted(((float(f), b["fixe"]["vehicules"], b["ecart_v2_vs_fixe_pct"]["moyenne"])
+                          for f, b in paliers.items() if "fixe" in b), key=lambda x: x[0])
+            meilleur = min(pts, key=lambda x: x[2])
+            utiles = [x for x in pts if x[2] <= -10]
+            texte = (f"Montée en charge sur le {lib}, de {fr(pts[0][1], 0)} à {fr(pts[-1][1], 0)} véhicules : "
+                     f"l’orchestrateur v2 réduit le retard au plus de {fr(-meilleur[2])} % "
+                     f"(à {fr(meilleur[1], 0)} véhicules)")
+            if utiles:
+                texte += (f", et d’au moins 10 % jusqu’à {fr(max(x[1] for x in utiles), 0)} véhicules ; "
+                          "au-delà, la demande dépasse la capacité du carrefour et l’écart se resserre.")
+            else:
+                texte += " ; l’écart reste inférieur à 10 % sur toute la plage : le carrefour est saturé dès les premiers paliers."
+            P.append(texte)
     n0 = (charger("ctrl_noqos.json") or {}).get("summary")
     n1 = (charger("ctrl_qos.json") or {}).get("summary")
     if n0 and n1:
@@ -288,6 +308,7 @@ axe Nord-Sud chargé à 65 % pendant les dix premières minutes, puis axe Est-Ou
 </section>
 
 <section><h2>3. Ce que montrent les résultats</h2><div id="interp"></div></section>
+__MONTEE__
 <section><h2>4. Résultats mesurés par le banc</h2><table id="res"><tr><th>Expérience</th><th>Mesure</th><th style="text-align:right">Valeur</th></tr></table>
 <p class="doux">Le détail, comparé valeur par valeur au mémoire, est dans <code>results_docker/rapport_memoire.md</code>.</p></section>
 <section><h2>5. Reproduire</h2><p><code>make build</code> puis <code>make memoire</code> (résultats du mémoire),
@@ -391,6 +412,15 @@ def main():
             .replace("__DATE__", date.today().strftime("%d/%m/%Y"))
             .replace("__INJ__", f"{INJECTES:,}".replace(",", " "))
             .replace("__DEPOT__", "github.com/jmazephgithun/Traffic-Congestion-Management-System-with-Connected-Traffic-Lights-based-on-SDN"))
+    svgs = sorted(RES.glob("montee-en-charge-*.svg"), key=lambda f: (not f.stem.endswith("ecart"), f.stem))
+    montee = ""
+    if svgs:
+        montee = ('<section><h2>Montée en charge : de quelques centaines à plusieurs milliers de véhicules</h2>'
+                  '<p class="doux">La demande de chaque scénario est multipliée palier par palier. Chaque point est la '
+                  'moyenne de plusieurs graines ; chaque simulation va jusqu’à la sortie du dernier véhicule.</p>'
+                  + "".join(f'<div style="overflow-x:auto;margin:10px 0">{f.read_text(encoding="utf-8")}</div>' for f in svgs)
+                  + '</section>')
+    html = html.replace("__MONTEE__", montee)
     out.write_text(html, encoding="utf-8")
     (out.parent / "interpretation.md").write_text(
         "# Interprétation automatique\n\n" + "\n\n".join(donnees["interpretation"]) + "\n", encoding="utf-8")
