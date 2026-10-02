@@ -15,9 +15,31 @@ services:
     environment:
       BW_EDGE: ${BW_EDGE:-5}
       DELAY_EDGE: ${DELAY_EDGE:-5ms}
+      CTRL_RATE: ${CTRL_RATE:-200K}
+      BG_RATE: ${BG_RATE:-8M}
+      DURATION: ${DURATION:-120}
+      DATAPATH: ${DATAPATH:-}
+      FIFO_LIMIT: ${FIFO_LIMIT:-50}
     volumes:
       - ./results_docker:/experiments/results_docker
     stop_grace_period: 10s
+
+  # Niveau 2 : interface graphique reelle de SUMO dans le navigateur (noVNC).
+  gui:
+    build:
+      context: .
+      dockerfile: docker/gui/Dockerfile
+    image: memoire3-experiment-gui:local
+    depends_on:
+      - lab
+    ports:
+      - "6080:6080"
+    environment:
+      SUMO_CFG: ${SUMO_CFG:-sumo_one_junction/one_junction_asymmetric_solibra.sumocfg}
+      MODE: ${MODE:-adaptatif}
+      SUMO_DELAY: ${SUMO_DELAY:-60}
+    shm_size: "512m"
+    profiles: ["gui"]
 
   tests:
     build:

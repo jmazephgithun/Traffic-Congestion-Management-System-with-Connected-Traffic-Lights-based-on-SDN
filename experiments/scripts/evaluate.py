@@ -14,8 +14,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SUMO_DIR = ROOT / "sumo_one_junction"
 CFG = SUMO_DIR / "one_junction_asymmetric.sumocfg"
+CFG_WEBSTER = SUMO_DIR / "one_junction_asymmetric_webster.sumocfg"
+CFG_SOLIBRA = SUMO_DIR / "one_junction_asymmetric_solibra.sumocfg"
 ORCHESTRATOR = ROOT / "pyfilesTrue" / "tls_orchestrator_CORRECTED.py"
 TOTAL_INJECTED = 1300
+TOTAL_INJECTED_SOLIBRA = 5852  # demande recalibree sur la capacite reelle du carrefour Solibra
 
 
 def parse_seeds(value):
@@ -44,21 +47,22 @@ def read_trips(path):
     return rows
 
 
-def summarize(seed, rows):
+def summarize(seed, rows, total=TOTAL_INJECTED):
     completed = len(rows)
     def mean(key):
         vals = [row[key] for row in rows if not math.isnan(row[key])]
         return round(statistics.mean(vals), 4) if vals else None
-    return {"seed": seed, "completed": completed, "blocked": TOTAL_INJECTED - completed,
-            "completion_pct": round(100 * completed / TOTAL_INJECTED, 4),
+    return {"seed": seed, "completed": completed, "blocked": total - completed,
+            "completion_pct": round(100 * completed / total, 4),
             "duration_mean_s": mean("duration"), "waiting_mean_s": mean("waitingTime"),
             "timeloss_mean_s": mean("timeLoss")}
 
 
-def run(seed, adaptive, work):
-    label = "adaptive" if adaptive else "baseline"
+def run(seed, adaptive, work, plan="default"):
+    label = "adaptive" if adaptive else f"baseline-{plan}"
     trip = work / f"tripinfo_{label}_{seed}.xml"
-    base = ["sumo", "-c", str(CFG), "--seed", str(seed), "--end", "3600",
+    cfg = CFG_SOLIBRA if plan == "solibra" else (CFG_WEBSTER if (not adaptive and plan == "webster") else CFG)
+    base = ["sumo", "-c", str(cfg), "--seed", str(seed), "--end", "3600",
             "--time-to-teleport", "-1", "--tripinfo-output", str(trip), "--no-warnings", "true"]
     if not adaptive:
         proc = subprocess.run(base, cwd=SUMO_DIR, text=True, capture_output=True, timeout=180)
@@ -81,7 +85,8 @@ def run(seed, adaptive, work):
         finally:
             if sumo.poll() is None:
                 sumo.terminate()
-    result = summarize(seed, read_trips(trip))
+    total = TOTAL_INJECTED_SOLIBRA if plan == "solibra" else TOTAL_INJECTED
+    result = summarize(seed, read_trips(trip), total)
     trip.unlink(missing_ok=True)
     return result
 
@@ -100,6 +105,8 @@ def main():
     parser.add_argument("--seeds", default="42", help="Ex.: 42,1-29")
     parser.add_argument("--mode", choices=("baseline", "adaptive", "both"), default="both")
     parser.add_argument("--output", default="results_docker/evaluation.json")
+    parser.add_argument("--plan", choices=("default", "webster", "solibra"), default="default",
+                        help="Plan a temps fixe de la baseline : defaut de SUMO ou calcule par Webster")
     args = parser.parse_args()
     seeds = parse_seeds(args.seeds)
     out = Path(args.output).resolve()
@@ -109,11 +116,13 @@ def main():
     baseline, adaptive = [], []
     for seed in seeds:
         if args.mode in ("baseline", "both"):
-            print(f"baseline seed={seed}", flush=True); baseline.append(run(seed, False, work))
+            print(f"baseline[{args.plan}] seed={seed}", flush=True)
+            baseline.append(run(seed, False, work, args.plan))
         if args.mode in ("adaptive", "both"):
             print(f"adaptive seed={seed}", flush=True); adaptive.append(run(seed, True, work))
     deltas = [a["completion_pct"] - b["completion_pct"] for b, a in zip(baseline, adaptive)]
-    report = {"protocol": {"seeds": seeds, "paired": True, "injected_per_run": TOTAL_INJECTED},
+    report = {"protocol": {"seeds": seeds, "paired": True, "injected_per_run": TOTAL_INJECTED,
+                           "baseline_plan": args.plan},
               "baseline": baseline, "adaptive": adaptive,
               "aggregate": {"baseline_completion_pct": ci95([r["completion_pct"] for r in baseline]),
                             "adaptive_completion_pct": ci95([r["completion_pct"] for r in adaptive]),

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewsettings>
+    <scheme name="real world"/>
+    <delay value="40"/>
+    <viewport zoom="350" x="247.04" y="550.14"/>
+    <decal file="solibra_fond_osm.png"
+           centerX="247.04" centerY="550.14"
+           width="1217.76" height="1217.76"
+           rotation="0" layer="-10" screenRelative="0"/>
+</viewsettings>

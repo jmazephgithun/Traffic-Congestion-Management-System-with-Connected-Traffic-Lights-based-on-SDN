@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!--
+      Programme statique du carrefour Solibra reconstruit (voir one_junction_solibra.net.xml).
+      18 liens de signalisation, du fait des deux voies par sens sur le Boulevard FHB.
+      Indices 0-4 et 9-13 : mouvements issus de FHB (axe est-ouest, "EW").
+      Indices 5-8 et 14-17 : mouvements issus d'Auguste Denise/du Canal (axe nord-sud, "NS").
+      phase 0 = vert NS, phase 2 = vert EW, comme dans le programme d origine,
+      pour que l orchestrateur fonctionne sans changement de ses options ns-phase-idx et ew-phase-idx.
+    -->
+    <tlLogic id="J1" type="static" programID="prog1" offset="0">
+    <phase duration="31" state="rrrrrGGGGrrrrrGGGG"/>
+    <phase duration="5"  state="rrrrryyyyrrrrryyyy"/>
+    <phase duration="31" state="GGGGGrrrrGGGGGrrrr"/>
+    <phase duration="5"  state="yyyyyrrrryyyyyrrrr"/>
+    </tlLogic>
+</additional>

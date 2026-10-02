@@ -32,6 +32,18 @@ class ExperimentTests(unittest.TestCase):
         self.assertEqual(parsed["role_hint"], "server")
         self.assertEqual(result["loss_pct_mean"], 1.0)
 
+    def test_iperf_final_summary_is_not_an_interval(self):
+        lines = ("[  1] 0.0000-1.0000 sec  24.4 KBytes   200 Kbits/sec   0.050 ms 0/17 (0%)\n"
+                 "[  1] 1.0000-2.0000 sec  24.4 KBytes   200 Kbits/sec   0.070 ms 0/17 (0%)\n"
+                 "[  1] 0.0000-120.0000 sec  2.86 MBytes   200 Kbits/sec   0.900 ms 9/2041 (0.44%)\n")
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "iperf.log"; path.write_text(lines)
+            parsed = parse_file(path)
+        result = summarize(parsed["intervals"])
+        self.assertEqual(result["samples"], 2)
+        self.assertAlmostEqual(result["jitter_ms_mean"], 0.06)
+        self.assertEqual(result["loss_pct_mean"], 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()

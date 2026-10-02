@@ -1,13 +1,14 @@
 # Ryu (framework abandonne, incompatible Python >= 3.10) tourne ici sous Python 3.9,
-# isole du reste du projet qui utilise Python 3.12. Open vSwitch fonctionne en
-# datapath "netdev" (espace utilisateur), sans module noyau. La creation des
-# namespaces/veth exige toutefois NET_ADMIN et /dev/net/tun (declares dans Compose).
+# isole du reste du projet. Open vSwitch utilise le datapath noyau de l'hote quand le
+# module openvswitch y est charge (comme Mininet), sinon le datapath "netdev" en espace
+# utilisateur. La creation des espaces de noms et des paires veth exige NET_ADMIN et
+# /dev/net/tun (declares dans Compose).
 FROM python:3.9-slim
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     openvswitch-switch openvswitch-common \
     iproute2 iptables iputils-ping \
-    iperf \
+    iperf ethtool \
     curl procps jq netcat-openbsd \
     libx11-6 libxext6 libxrender1 libgl1 libexpat1 \
     build-essential \

@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Validate Compose configuration
         run: docker compose config --quiet
+      - name: Check shell scripts syntax
+        run: for f in docker/*.sh docker/gui/*.sh; do bash -n "$f"; done
       - name: Build the reproducible image
         run: docker compose build
       - name: Run unit tests inside Docker

@@ -48,6 +48,10 @@ def parse_file(path):
 
         g = m.groupdict()
         t0 = float(g['t0']); t1 = float(g['t1'])
+        # La ligne de synthese finale d'iperf couvre toute la duree : ce n'est
+        # pas un intervalle de mesure et elle fausserait moyennes et centiles.
+        if t1 - t0 > 1.5:
+            continue
         bw = float(g['bw']); bw_unit = g['bw_unit']
         bw_mbps = to_mbps(bw, bw_unit)
         rest = g['rest']

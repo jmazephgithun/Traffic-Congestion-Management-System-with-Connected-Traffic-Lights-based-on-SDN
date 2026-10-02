@@ -1,0 +1,11 @@
+<routes>
+  <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5" maxSpeed="13.9"/>
+  <flow id="fNS_p1" type="car" from="N2J1" to="J1toS" begin="0" end="600" number="1125" departLane="best" departSpeed="max"/>
+  <flow id="fSN_p1" type="car" from="S2J1" to="J1toN" begin="0" end="600" number="1125" departLane="best" departSpeed="max"/>
+  <flow id="fEW_p1" type="car" from="E2J1" to="J1toW" begin="0" end="600" number="338" departLane="best" departSpeed="max"/>
+  <flow id="fWE_p1" type="car" from="W2J1" to="J1toE" begin="0" end="600" number="338" departLane="best" departSpeed="max"/>
+  <flow id="fNS_p2" type="car" from="N2J1" to="J1toS" begin="600" end="1200" number="338" departLane="best" departSpeed="max"/>
+  <flow id="fSN_p2" type="car" from="S2J1" to="J1toN" begin="600" end="1200" number="338" departLane="best" departSpeed="max"/>
+  <flow id="fEW_p2" type="car" from="E2J1" to="J1toW" begin="600" end="1200" number="1125" departLane="best" departSpeed="max"/>
+  <flow id="fWE_p2" type="car" from="W2J1" to="J1toE" begin="600" end="1200" number="1125" departLane="best" departSpeed="max"/>
+</routes>

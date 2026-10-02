@@ -14,7 +14,15 @@ set -e
 BW_EDGE=${BW_EDGE:-5}
 DELAY_EDGE=${DELAY_EDGE:-5ms}
 
-echo "[bringup] demarrage d'Open vSwitch (datapath netdev, espace utilisateur)"
+# Datapath noyau (celui de Mininet) si le module openvswitch est charge sur l'hote :
+# c'est le seul ou l'action set_queue choisit reellement la file HTB. A defaut,
+# repli sur le datapath en espace utilisateur (netdev), qui conserve la
+# commutation et OpenFlow mais ignore set_queue : la QoS n'y est pas mesurable.
+if [ -z "${DATAPATH:-}" ]; then
+    if [ -d /sys/module/openvswitch ]; then DATAPATH=system; else DATAPATH=netdev; fi
+fi
+echo "$DATAPATH" > /experiments/results_docker/datapath.txt
+echo "[bringup] demarrage d'Open vSwitch (datapath $DATAPATH)"
 mkdir -p /var/run/openvswitch /etc/openvswitch /var/log/openvswitch
 if [ ! -f /etc/openvswitch/conf.db ]; then
     ovsdb-tool create /etc/openvswitch/conf.db /usr/share/openvswitch/vswitch.ovsschema
@@ -24,7 +32,7 @@ ovs-vsctl --no-wait init
 ovs-vswitchd --pidfile --detach --log-file
 
 echo "[bringup] creation du pont ap1"
-ovs-vsctl --may-exist add-br ap1 -- set bridge ap1 datapath_type=netdev protocols=OpenFlow13
+ovs-vsctl --may-exist add-br ap1 -- set bridge ap1 datapath_type=$DATAPATH protocols=OpenFlow13
 ovs-vsctl set-controller ap1 tcp:127.0.0.1:6653
 
 echo "[bringup] creation des espaces de noms car1, car2, car3, edge"
@@ -43,6 +51,12 @@ for ns in car1 car2 car3 edge; do
     ip netns exec "$ns" ip link set lo up
     ip link set "$veth_h" up
     ovs-vsctl --may-exist add-port ap1 "$veth_h"
+    # Open vSwitch en espace utilisateur (netdev) ne complete pas les sommes de
+    # controle laissees au materiel : sans cette ligne, le noyau du recepteur
+    # rejette tous les paquets UDP (le ping, lui, passe). On les calcule donc
+    # en logiciel des deux cotes de chaque paire veth.
+    ethtool -K "$veth_h" tx off >/dev/null
+    ip netns exec "$ns" ethtool -K "$veth_ns" tx off >/dev/null
 done
 
 echo "[bringup] regle de base : NORMAL pour tout paquet (priority=0)"
@@ -59,6 +73,16 @@ ovs-vsctl -- set port ap1-edge qos=@q \
   -- --id=@q create qos type=linux-htb other-config:max-rate=$MAX_RATE queues:0=@dflt queues:1=@prio \
   -- --id=@dflt create queue other-config:min-rate=100000 other-config:max-rate=${DFLT_MAX} \
   -- --id=@prio create queue other-config:min-rate=${PRIO_MIN} other-config:max-rate=${MAX_RATE}
+
+# Files FIFO courtes (50 paquets) sous chaque classe HTB. Sans elles, le noyau
+# y place sa file par defaut (souvent fq_codel), dont l'equite entre flux
+# protegerait deja le flux de controle. La limite doit rester inferieure aux
+# tampons d'envoi des vehicules : sinon ceux-ci sont freines localement et la
+# file ne deborde jamais, alors que des stations Wi-Fi (memoire, Mininet-WiFi)
+# n'exercent pas cette contre-pression.
+for classe in 1:1 1:2; do
+    tc qdisc replace dev ap1-edge parent "$classe" pfifo limit "${FIFO_LIMIT:-50}"
+done
 
 echo "[bringup] pret. Verification de connectivite (equivalent pingall) :"
 for ns in car1 car2 car3; do

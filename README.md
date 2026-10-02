@@ -7,31 +7,34 @@ SUMO/TraCI, un orchestrateur de feux, Ryu/OpenFlow et Open vSwitch avec QoS HTB.
 
 ## Expérimentation reproductible
 
-La version Docker complète se trouve dans [`experiments/`](experiments/README.md).
-Elle documente et permet de lancer séparément toutes les phases du mémoire :
+Le banc conteneurisé se trouve dans [`experiments/`](experiments/README.md). Il est
+organisé en deux niveaux :
 
-- phase A : baseline, commande adaptative et campagne statistique ;
-- phase B : réseau saturé sans puis avec QoS SDN ;
-- phase C : boucle fermée SUMO → orchestrateur → Ryu → OpenFlow ;
-- phase D : rapport consolidé.
+| Niveau | Commande | Objet |
+|---|---|---|
+| 1. Reproduction du mémoire | `make memoire` | Rejoue les phases A et B, la boucle fermée et le plan Webster, puis compare chaque valeur mesurée à la valeur publiée |
+| 2. Option évoluée | `make evolue` | Contrôleurs par secteur (Abidjan Nord et Sud) avec secours, carrefour réel de Solibra, rejeu comparatif, interface graphique SUMO |
 
 ```bash
 cd experiments
-make build
-make test
-make smoke
-make all-tests
+make build      # une seule fois
+make demo       # démonstration visuelle commentée : experiments/results_docker/demo.html
+make gui        # SUMO en direct dans le navigateur : http://localhost:6080
+make memoire    # niveau 1
+make evolue     # niveau 2
 ```
 
-Les détails des composants et des échanges sont présentés dans
-[`experiments/ARCHITECTURE.md`](experiments/ARCHITECTURE.md).
+![Démonstration sur la carte réelle de Solibra](experiments/docs/captures/demo_carte_solibra.png)
 
-Le rapport des tests effectivement exécutés est disponible dans
-[`experiments/VALIDATION.md`](experiments/VALIDATION.md).
+Seul Docker est nécessaire ; la section 1 du [mode d’emploi](experiments/README.md)
+explique son installation sous Windows (WSL 2), Ubuntu et macOS.
+
+- [`experiments/README.md`](experiments/README.md) : mode d’emploi complet ;
+- [`experiments/ARCHITECTURE.md`](experiments/ARCHITECTURE.md) : composants et flux de décision ;
+- [`experiments/VALIDATION.md`](experiments/VALIDATION.md) : valeurs réellement mesurées, comparées au mémoire.
 
 Les résultats sont produits localement dans `experiments/results_docker/` et ne
-sont pas versionnés. Les prérequis et limites expérimentales, notamment la portée
-de l’émulation Wi-Fi, sont détaillés dans le README du dossier.
+sont pas versionnés.
 
 ## Implémentation historique
 

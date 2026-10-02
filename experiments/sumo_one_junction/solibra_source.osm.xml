@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API 0.7.62.11 87bfad18">
+<note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+<meta osm_base="2026-08-31T17:03:00Z"/>
+
+  <node id="33320945" lat="5.3012420" lon="-3.9909266"/>
+  <node id="338558651" lat="5.3036693" lon="-3.9946377"/>
+  <node id="338558652" lat="5.3036057" lon="-3.9947787"/>
+  <node id="339029845" lat="5.3012028" lon="-3.9942563"/>
+  <node id="1055582816" lat="5.2962541" lon="-3.9930844"/>
+  <node id="1055582835" lat="5.3008687" lon="-3.9937083">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="1055582854" lat="5.3005544" lon="-3.9937855"/>
+  <node id="2912112781" lat="5.3015445" lon="-3.9910116"/>
+  <node id="2912112784" lat="5.3017191" lon="-3.9929299"/>
+  <node id="2912112786" lat="5.3017957" lon="-3.9924580"/>
+  <node id="2912112787" lat="5.3017708" lon="-3.9917703"/>
+  <node id="3005761614" lat="5.2996635" lon="-3.9936552"/>
+  <node id="4020282980" lat="5.2974688" lon="-3.9933426"/>
+  <node id="4020631724" lat="5.3003987" lon="-3.9936642"/>
+  <node id="6063463709" lat="5.3001008" lon="-3.9936315"/>
+  <node id="6444193556" lat="5.3005229" lon="-3.9957278"/>
+  <node id="6444193563" lat="5.3014920" lon="-3.9911358"/>
+  <node id="6444193564" lat="5.3014017" lon="-3.9939653"/>
+  <node id="6444196457" lat="5.3016325" lon="-3.9915816"/>
+  <node id="6444196458" lat="5.3016873" lon="-3.9918244"/>
+  <node id="6444196459" lat="5.3017134" lon="-3.9920146"/>
+  <node id="6444196460" lat="5.3017285" lon="-3.9922052"/>
+  <node id="6444196461" lat="5.3017143" lon="-3.9925592"/>
+  <node id="6444196462" lat="5.3016326" lon="-3.9929650"/>
+  <node id="6444196463" lat="5.3014528" lon="-3.9935292"/>
+  <node id="6444196474" lat="5.3010329" lon="-3.9940532">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="6444196475" lat="5.3011346" lon="-3.9937598"/>
+  <node id="6444196476" lat="5.3010920" lon="-3.9938870"/>
+  <node id="6444196477" lat="5.3013840" lon="-3.9915816"/>
+  <node id="6444196478" lat="5.3014518" lon="-3.9919490"/>
+  <node id="6444196479" lat="5.3014626" lon="-3.9921423"/>
+  <node id="6444196480" lat="5.3014424" lon="-3.9923867"/>
+  <node id="6444196481" lat="5.3012709" lon="-3.9933464"/>
+  <node id="6444196483" lat="5.3011976" lon="-3.9935806"/>
+  <node id="6444196801" lat="5.3006062" lon="-3.9960935"/>
+  <node id="6444196805" lat="5.3007146" lon="-3.9958417"/>
+  <node id="6444196806" lat="5.3008425" lon="-3.9955177"/>
+  <node id="6444196817" lat="5.3012706" lon="-3.9910061"/>
+  <node id="6444196818" lat="5.3013001" lon="-3.9911084"/>
+  <node id="6444196819" lat="5.3013281" lon="-3.9912457"/>
+  <node id="6444196823" lat="5.3022116" lon="-3.9940346"/>
+  <node id="6444196827" lat="5.3014479" lon="-3.9938355"/>
+  <node id="6444196831" lat="5.3008280" lon="-3.9938303"/>
+  <node id="6444196833" lat="5.3014881" lon="-3.9939899">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="6444196836" lat="5.3032301" lon="-3.9946648"/>
+  <node id="6444196837" lat="5.3033538" lon="-3.9947037"/>
+  <node id="6444196838" lat="5.3014985" lon="-3.9930351"/>
+  <node id="6444196839" lat="5.3014442" lon="-3.9932317"/>
+  <node id="6444196840" lat="5.3013640" lon="-3.9934895"/>
+  <node id="6444196841" lat="5.3010038" lon="-3.9945078"/>
+  <node id="6444196842" lat="5.3006961" lon="-3.9953908"/>
+  <node id="6444196843" lat="5.3019961" lon="-3.9940394"/>
+  <node id="6444196844" lat="5.3021278" lon="-3.9941126"/>
+  <node id="6444196845" lat="5.3023963" lon="-3.9942178"/>
+  <node id="6444196846" lat="5.3027335" lon="-3.9943454"/>
+  <node id="6444196889" lat="5.3009090" lon="-3.9944250"/>
+  <node id="6444196890" lat="5.3006041" lon="-3.9952987"/>
+  <node id="6444196891" lat="5.3005612" lon="-3.9954700"/>
+  <node id="6444196892" lat="5.3004570" lon="-3.9960465"/>
+  <node id="6444196894" lat="5.3033665" lon="-3.9944987"/>
+  <node id="6444196895" lat="5.3031400" lon="-3.9943867"/>
+  <node id="6444196896" lat="5.3027712" lon="-3.9942324"/>
+  <node id="6444196900" lat="5.3015964" lon="-3.9925303"/>
+  <node id="6444196901" lat="5.3015659" lon="-3.9930631"/>
+  <node id="6444196902" lat="5.3015632" lon="-3.9932551"/>
+  <node id="6444196903" lat="5.3015782" lon="-3.9933915"/>
+  <node id="6444196904" lat="5.3016500" lon="-3.9936446"/>
+  <node id="6444196905" lat="5.3017412" lon="-3.9938011"/>
+  <node id="6444196906" lat="5.3018664" lon="-3.9939370"/>
+  <node id="6520112739" lat="5.3014286" lon="-3.9918131"/>
+  <node id="6520112741" lat="5.3012993" lon="-3.9932313"/>
+  <node id="7061473337" lat="5.3005944" lon="-3.9959800"/>
+  <node id="7834483690" lat="5.3027886" lon="-3.9944631"/>
+  <node id="7834483691" lat="5.3020898" lon="-3.9940134"/>
+  <node id="7834483693" lat="5.3034755" lon="-3.9947346"/>
+  <node id="7834483694" lat="5.3026110" lon="-3.9943844"/>
+  <node id="12120048801" lat="5.3013663" lon="-3.9928650"/>
+  <node id="12147543474" lat="5.3015367" lon="-3.9932747"/>
+  <node id="12147543475" lat="5.3016890" lon="-3.9927189"/>
+  <node id="12147543477" lat="5.3016587" lon="-3.9939032"/>
+  <node id="12147543481" lat="5.3016028" lon="-3.9935260"/>
+  <node id="12147543482" lat="5.3015426" lon="-3.9928246"/>
+  <node id="12147543499" lat="5.3016577" lon="-3.9913085"/>
+  <node id="12147543500" lat="5.3017149" lon="-3.9915301"/>
+  <node id="12147548401" lat="5.3018005" lon="-3.9919785"/>
+  <node id="12147548402" lat="5.3018107" lon="-3.9921762"/>
+  <node id="12147548403" lat="5.3017658" lon="-3.9926809"/>
+  <node id="12147548405" lat="5.3015675" lon="-3.9913534"/>
+  <node id="12147548407" lat="5.3015658" lon="-3.9934893"/>
+  <node id="12170358982" lat="5.3013461" lon="-3.9941198"/>
+  <node id="13132259169" lat="5.3015573" lon="-3.9938706">
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="13132259170" lat="5.3015131" lon="-3.9939987">
+    <tag k="highway" v="crossing"/>
+  </node>
+  <node id="13132259171" lat="5.3017285" lon="-3.9940743"/>
+  <way id="386511874">
+    <nd ref="2912112781"/>
+    <nd ref="12147543499"/>
+    <nd ref="12147543500"/>
+    <nd ref="2912112787"/>
+    <nd ref="12147548401"/>
+    <nd ref="12147548402"/>
+    <nd ref="2912112786"/>
+    <nd ref="12147548403"/>
+    <nd ref="2912112784"/>
+    <nd ref="12147548407"/>
+    <nd ref="6444196827"/>
+    <tag k="highway" v="trunk"/>
+    <tag k="lanes" v="2"/>
+    <tag k="name" v="Boulevard Félix Houphouët Boigny (FHB)"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="398431250">
+    <nd ref="6444193563"/>
+    <nd ref="12147548405"/>
+    <nd ref="6444196457"/>
+    <nd ref="6444196458"/>
+    <nd ref="6444196459"/>
+    <nd ref="6444196460"/>
+    <nd ref="6444196461"/>
+    <nd ref="12147543475"/>
+    <nd ref="6444196462"/>
+    <nd ref="12147543474"/>
+    <nd ref="6444196463"/>
+    <nd ref="339029845"/>
+    <nd ref="7061473337"/>
+    <tag k="bridge" v="yes"/>
+    <tag k="destination" v="Treichville;Attecoubé;Plateau;CHU Treichville;Parc des Sports;Pont Félix Houphoët-Boigny"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="layer" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="name" v="Boulevard Félix Houphouët Boigny (FHB)"/>
+    <tag k="old_name" v="Boulevard Valéry Giscard d'Estaing"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="short_name" v="Blvd FHB"/>
+    <tag k="start_date" v="2024-30-08"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="398431263">
+    <nd ref="6444196476"/>
+    <nd ref="6444196475"/>
+    <nd ref="6444196483"/>
+    <nd ref="6444196481"/>
+    <nd ref="6520112741"/>
+    <nd ref="12120048801"/>
+    <nd ref="6444196480"/>
+    <nd ref="6444196479"/>
+    <nd ref="6444196478"/>
+    <nd ref="6520112739"/>
+    <nd ref="6444196477"/>
+    <nd ref="6444196819"/>
+    <nd ref="6444196818"/>
+    <nd ref="6444196817"/>
+    <nd ref="33320945"/>
+    <tag k="destination" v="Koumassi;Port-Bouët"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="name" v="Boulevard Félix Houphouët Boigny (FHB)"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="short_name" v="Blvd FHB"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="399329966">
+    <nd ref="6444196827"/>
+    <nd ref="13132259169"/>
+    <nd ref="12147543477"/>
+    <nd ref="7834483691"/>
+    <nd ref="6444196823"/>
+    <tag k="destination" v="Cocody;Adjamé;Palais de la Culture;Pont Général-de-Gaulle;Stade Robert Champroux"/>
+    <tag k="highway" v="trunk"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468656">
+    <nd ref="6444196475"/>
+    <nd ref="6444196827"/>
+    <tag k="destination" v="Cocody;Adjamé;Palais de la Culture;Pont Général-de-Gaulle;Stade Robert Champroux"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468657">
+    <nd ref="6444193564"/>
+    <nd ref="12170358982"/>
+    <nd ref="6444196806"/>
+    <nd ref="6444196805"/>
+    <nd ref="6444196801"/>
+    <tag k="destination" v="Pont de Gaulle;Pont Felix Houphouët-Boigny"/>
+    <tag k="destination:street" v="Boulevard Félix Houphouët Boigny (FHB)"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="name" v="Boulevard Félix Houphouët Boigny (FHB)"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="short_name" v="Blvd VGE"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468658">
+    <nd ref="6444196892"/>
+    <nd ref="6444193556"/>
+    <nd ref="6444196891"/>
+    <nd ref="6444196890"/>
+    <nd ref="6444196889"/>
+    <nd ref="6444196474"/>
+    <nd ref="6444196476"/>
+    <tag k="destination" v="Koumassi;Port-Bouët"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="name" v="Boulevard Félix Houphouët Boigny (FHB)"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="short_name" v="Blvd VGE"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468663">
+    <nd ref="338558652"/>
+    <nd ref="7834483693"/>
+    <nd ref="6444196837"/>
+    <nd ref="6444196836"/>
+    <nd ref="7834483690"/>
+    <nd ref="7834483694"/>
+    <nd ref="13132259171"/>
+    <nd ref="13132259170"/>
+    <nd ref="6444196833"/>
+    <nd ref="6444193564"/>
+    <tag k="highway" v="trunk"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="name" v="Boulevard Auguste Denise"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468665">
+    <nd ref="1055582816"/>
+    <nd ref="6063463709"/>
+    <nd ref="4020631724"/>
+    <nd ref="1055582835"/>
+    <nd ref="6444196475"/>
+    <tag k="destination" v="Pont de Gaulle;Plateau;Yopougon"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="name" v="Boulevard du Canal"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="sidewalk" v="right"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468675">
+    <nd ref="6444196823"/>
+    <nd ref="6444196896"/>
+    <nd ref="6444196895"/>
+    <nd ref="6444196894"/>
+    <nd ref="338558651"/>
+    <tag k="destination" v="Cocody;Adjamé;Palais de la Culture;Pont Général-de-Gaulle;Stade Robert Champroux"/>
+    <tag k="highway" v="trunk"/>
+    <tag k="lanes" v="3"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468676">
+    <nd ref="6444196476"/>
+    <nd ref="6444196831"/>
+    <nd ref="1055582854"/>
+    <nd ref="3005761614"/>
+    <nd ref="4020282980"/>
+    <tag k="destination" v="Zone 3;Centre National de Transfusion Sanguine"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="name" v="Boulevard Auguste Denise"/>
+    <tag k="old_name" v="Boulevard du Canal"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468679">
+    <nd ref="6444196842"/>
+    <nd ref="6444196841"/>
+    <nd ref="6444196840"/>
+    <nd ref="6444196839"/>
+    <nd ref="6444196838"/>
+    <nd ref="12147543482"/>
+    <nd ref="6444196900"/>
+    <tag k="bridge" v="yes"/>
+    <tag k="highway" v="primary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="layer" v="1"/>
+    <tag k="lit" v="yes"/>
+    <tag k="name" v="Boulevard Félix Houphouët Boigny"/>
+    <tag k="old_name" v="Boulevard Valéry Giscard d'Estaing"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="short_name" v="Blvd FHB"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="687468680">
+    <nd ref="6444196846"/>
+    <nd ref="6444196845"/>
+    <nd ref="6444196844"/>
+    <nd ref="6444196843"/>
+    <nd ref="6444196906"/>
+    <nd ref="6444196905"/>
+    <nd ref="6444196904"/>
+    <nd ref="12147543481"/>
+    <nd ref="6444196903"/>
+    <nd ref="6444196902"/>
+    <nd ref="6444196901"/>
+    <nd ref="6444196900"/>
+    <tag k="bridge" v="yes"/>
+    <tag k="check_date" v="2019-09-28"/>
+    <tag k="highway" v="trunk"/>
+    <tag k="lanes" v="2"/>
+    <tag k="layer" v="1"/>
+    <tag k="name" v="Boulevard Auguste Denise"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="705053695">
+    <nd ref="6444196827"/>
+    <nd ref="6444193564"/>
+    <tag k="destination" v="Pont de Gaulle;Pont Felix Houphouët-Boigny"/>
+    <tag k="highway" v="trunk"/>
+    <tag k="lanes" v="2"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="name" v="Boulevard Félix Houphouët Boigny (FHB)"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="short_name" v="Blvd VGE"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+  <way id="1308780886">
+    <nd ref="6444193564"/>
+    <nd ref="6444196476"/>
+    <tag k="highway" v="secondary"/>
+    <tag k="lanes" v="2"/>
+    <tag k="lit" v="yes"/>
+    <tag k="maxspeed" v="60"/>
+    <tag k="maxspeed:bus" v="50"/>
+    <tag k="maxspeed:hgv" v="50"/>
+    <tag k="maxspeed:tourist_bus" v="50"/>
+    <tag k="name" v="Boulevard Auguste Denise"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="source" v="MCLU/PADA"/>
+    <tag k="source:date" v="2023/05/03"/>
+    <tag k="source:maxspeed" v="CI:urban"/>
+    <tag k="surface" v="asphalt"/>
+  </way>
+
+</osm>

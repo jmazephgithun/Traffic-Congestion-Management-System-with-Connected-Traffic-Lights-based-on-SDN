@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!--
+      Plan a temps fixe calcule par la formule de Webster, et non laisse au
+      defaut de SUMO. Il sert d'adversaire serieux a la commande adaptative.
+
+      Donnees : mouvement critique par phase sur l'horizon de simulation,
+      325 veh/h en NS comme en EW ; debit de saturation retenu s = 1800 veh/h
+      par voie ; temps perdu total L = 18 s, soit deux jaunes de 5 s et deux
+      temps perdu de demarrage de 4 s.
+
+        y_NS = y_EW = 325 / 1800 = 0,18      Y = 0,36
+        C = (1,5 x L + 5) / (1 - Y) = 32 / 0,64 = 50 s
+        vert effectif total Ge = C - L = 32 s, reparti 16 s / 16 s
+        vert affiche = vert effectif + temps perdu de demarrage = 20 s
+
+      Cycle programme : 20 + 5 + 20 + 5 = 50 s, contre 72 s au plan par defaut.
+    -->
+    <tlLogic id="J1" type="static" programID="webster" offset="0">
+    <phase duration="20" state="GGrr"/>
+    <phase duration="5"  state="yyrr"/>
+    <phase duration="20" state="rrGG"/>
+    <phase duration="5"  state="rryy"/>
+    </tlLogic>
+</additional>
