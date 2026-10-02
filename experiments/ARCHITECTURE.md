@@ -32,6 +32,22 @@ En phase B, `car2` et `car3` émettent chacun 8 Mbit/s vers `edge` pendant que
 5 Mbit/s. Le jitter et les pertes du flux de contrôle sont lus dans le journal du
 récepteur (`edge`), seul endroit où iperf2 les calcule.
 
+## Orchestrateur v2 (option évoluée)
+
+`pyfilesTrue/tls_orchestrator_v2.py` garde l’interface de l’orchestrateur du mémoire
+(mêmes options, même publication `POST /metrics` vers Ryu) et change la décision :
+
+```text
+pression(axe) = véhicules sur les tronçons de l'axe + véhicules en attente d'insertion sur ces tronçons
+après le vert minimal (10 s), changer d'axe si l'autre axe attend et que :
+    l'axe servi est vide (gap-out)
+    ou pression(autre) > pression(servi) x 1,15
+    ou le vert maximal (45 s) est atteint
+chaque changement passe par la phase orange du programme, avec sa durée
+```
+
+Les axes sont déduits des phases vertes du programme actif, et non du nom des tronçons.
+
 ## Niveau 2 : contrôleurs par secteur avec secours
 
 Prototype de la proposition de déploiement du chapitre 3 (section 7), lancé par

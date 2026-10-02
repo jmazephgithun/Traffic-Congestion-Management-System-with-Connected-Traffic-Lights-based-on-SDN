@@ -1,0 +1,28 @@
+<routes>
+  <vType id="car" accel="2.0" decel="4.5" sigma="0.5" length="5" maxSpeed="13.9"/>
+  <!--
+    Scenario « alternance sous la capacite » (option evoluee du depot).
+    Quatre periodes de 600 s. L axe charge recoit 1 000 veh/h par approche, l autre 300 veh/h ;
+    l axe charge alterne : Nord-Sud, Est-Ouest, Nord-Sud, Est-Ouest.
+    Taux de charge du carrefour : Y = 1000/1800 + 300/1800 = 0,72 < 1 : la demande est ecoulable,
+    a condition de repartir le vert au bon moment. Le plan fixe 31 s/31 s n offre a chaque axe
+    qu environ 775 veh/h : l axe charge accumule une file a chaque pointe.
+    Total : 4 x (2 x 167 + 2 x 50) = 1 736 vehicules.
+  -->
+  <flow id="fNS_p1" type="car" from="N2J1" to="J1toS" begin="0" end="600" number="167" departLane="best" departSpeed="max"/>
+  <flow id="fSN_p1" type="car" from="S2J1" to="J1toN" begin="0" end="600" number="167" departLane="best" departSpeed="max"/>
+  <flow id="fEW_p1" type="car" from="E2J1" to="J1toW" begin="0" end="600" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fWE_p1" type="car" from="W2J1" to="J1toE" begin="0" end="600" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fNS_p2" type="car" from="N2J1" to="J1toS" begin="600" end="1200" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fSN_p2" type="car" from="S2J1" to="J1toN" begin="600" end="1200" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fEW_p2" type="car" from="E2J1" to="J1toW" begin="600" end="1200" number="167" departLane="best" departSpeed="max"/>
+  <flow id="fWE_p2" type="car" from="W2J1" to="J1toE" begin="600" end="1200" number="167" departLane="best" departSpeed="max"/>
+  <flow id="fNS_p3" type="car" from="N2J1" to="J1toS" begin="1200" end="1800" number="167" departLane="best" departSpeed="max"/>
+  <flow id="fSN_p3" type="car" from="S2J1" to="J1toN" begin="1200" end="1800" number="167" departLane="best" departSpeed="max"/>
+  <flow id="fEW_p3" type="car" from="E2J1" to="J1toW" begin="1200" end="1800" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fWE_p3" type="car" from="W2J1" to="J1toE" begin="1200" end="1800" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fNS_p4" type="car" from="N2J1" to="J1toS" begin="1800" end="2400" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fSN_p4" type="car" from="S2J1" to="J1toN" begin="1800" end="2400" number="50" departLane="best" departSpeed="max"/>
+  <flow id="fEW_p4" type="car" from="E2J1" to="J1toW" begin="1800" end="2400" number="167" departLane="best" departSpeed="max"/>
+  <flow id="fWE_p4" type="car" from="W2J1" to="J1toE" begin="1800" end="2400" number="167" departLane="best" departSpeed="max"/>
+</routes>

@@ -18,6 +18,7 @@ make test-c && make test-c30
 make rapport
 make test-secteurs
 make demo && make replay && make test-solibra
+make evaluation-equitable
 ```
 
 Toutes ces commandes se sont terminées avec le code de sortie `0`. Tests unitaires : 4/4 réussis.
@@ -45,25 +46,87 @@ Toutes ces commandes se sont terminées avec le code de sortie `0`. Tests unitai
 
 La phase A est reproduite à l’identique : SUMO est déterministe à graine donnée.
 
-### Point de vigilance méthodologique : l’horizon de simulation
+### Points de protocole relevés en reproduisant la phase A
 
-En reproduisant la phase A, le banc a mis en évidence une différence d’horizon entre les
-deux variantes du protocole du mémoire. Les feux fixes sont simulés jusqu’à 3 600 s
-(`--end 3600`), tandis qu’en mode adaptatif l’orchestrateur fait avancer SUMO jusqu’à ce
-que tous les véhicules soient sortis. Mesures sur la graine 42 :
+Le banc conserve volontairement le protocole du mémoire, pour en reproduire les valeurs
+publiées. En le rejouant, il a relevé trois points qui faussent la comparaison entre feux
+fixes et feux adaptatifs.
+
+**1. Horizon de simulation inégal.** Les feux fixes sont simulés jusqu’à 3 600 s
+(`--end 3600`) ; en mode adaptatif, l’orchestrateur fait avancer SUMO jusqu’à la sortie du
+dernier véhicule. Sur la graine 42 :
 
 | Horizon | Feux fixes | Plan Webster | Feux adaptatifs |
 |---|---:|---:|---:|
-| 3 600 s, identique pour tous | 974 / 1 300 | non mesuré | 979 / 1 300 |
-| 4 800 s | 1 298 / 1 300 | 1 300 / 1 300 | 1 300 / 1 300 (dernier véhicule à 4 789 s) |
+| 3 600 s, identique pour tous | 974 / 1 300 | 991 / 1 300 | 979 / 1 300 |
+| Jusqu’à la sortie du dernier véhicule | 1 300 à 4 803 s | 1 300 à 4 743 s | 1 300 à 4 789 s |
 
-Les 326 véhicules non écoulés en feux fixes à 3 600 s ne sont donc pas bloqués
-définitivement : ils sont encore en file et sortent ensuite. À horizon égal, l’écart entre
-les deux politiques est de quelques véhicules. Le banc conserve volontairement le
-protocole du mémoire, pour en reproduire les valeurs publiées ; une comparaison à
-horizon égal, avec des indicateurs comme le temps total passé dans le réseau ou la
-longueur maximale des files, permettrait de mesurer l’apport réel de la commande
-adaptative.
+Les 326 véhicules non sortis à 3 600 s en feux fixes ne sont donc pas bloqués
+définitivement : ils attendent, surtout avant même d’entrer dans le réseau.
+
+**2. Phases du carrefour J1 qui se croisent.** Les indices de feu du réseau sont
+0 = Nord, 1 = Est, 2 = Sud, 3 = Ouest. Le programme `one_junction.add.xml` du mémoire
+(états `GGrr` et `rrGG`) met au vert Nord + Est, puis Sud + Ouest : des mouvements qui se
+croisent, qui doivent se céder le passage et réduisent fortement la capacité du carrefour.
+Le programme d’origine du réseau (`GrGr`, Nord + Sud) était correct mais il est remplacé.
+Le plan Webster a le même défaut, et l’orchestrateur du mémoire compare les files
+Nord + Sud et Est + Ouest, qui ne correspondent pas aux phases qu’il commande. Le carrefour
+de Solibra est, lui, correctement défini.
+
+**3. Absence de phase orange.** L’orchestrateur du mémoire passe directement d’un vert à
+l’autre, alors que les feux fixes et le plan Webster respectent 5 s d’orange : il dispose
+ainsi de quelques secondes de vert supplémentaires à chaque changement.
+
+### Comparaison à base égale (`make evaluation-equitable`, 30 graines)
+
+Chaque simulation tourne jusqu’à la sortie du dernier véhicule. Le retard total d’un
+véhicule est son attente avant d’entrer dans le réseau plus son temps perdu dans le réseau.
+L’orchestrateur v2 corrige les limites de celui du mémoire et respecte la phase orange :
+c’est lui qui donne le gain loyal de la commande adaptative.
+
+
+#### Carrefour J1 du mémoire (saturé, 1 300 véhicules)
+
+| Politique | Retard total moyen (s) | Écart vs feux fixes | Vidage (s) | Sortis à 1 800 s | Sortis à 3 600 s |
+|---|---:|---:|---:|---:|---:|
+| Feux fixes | 1 789 | référence | 4 802 | 487 | 974 |
+| Plan Webster | 1 742 | -2,6 % [-2,9 ; -2,3] | 4 706 | 496 | 995 |
+| Adaptatif (mémoire) | 1 777 | -0,6 % [-0,9 ; -0,4] | 4 795 | 490 | 978 |
+| Adaptatif v2 | 1 792 | 0,2 % [-0,1 ; 0,4] | 4 789 | 486 | 974 |
+
+#### Carrefour J1, phases corrigées (Nord+Sud / Est+Ouest), demande du mémoire
+
+| Politique | Retard total moyen (s) | Écart vs feux fixes | Vidage (s) | Sortis à 1 800 s | Sortis à 3 600 s |
+|---|---:|---:|---:|---:|---:|
+| Feux fixes | 291 | référence | 1 814 | 1 298 | 1 300 |
+| Plan Webster | 362 | 24,6 % [23,8 ; 25,4] | 1 959 | 1 244 | 1 300 |
+| Adaptatif (mémoire) | 194 | -33,5 % [-33,9 ; -33,1] | 1 727 | 1 300 | 1 300 |
+| Adaptatif v2 | 227 | -22,1 % [-23,4 ; -20,7] | 1 705 | 1 300 | 1 300 |
+
+#### Carrefour réel de Solibra (saturé, 5 852 véhicules)
+
+| Politique | Retard total moyen (s) | Écart vs feux fixes | Vidage (s) | Sortis à 1 800 s | Sortis à 3 600 s |
+|---|---:|---:|---:|---:|---:|
+| Feux fixes | 2 122 | référence | 7 486 | 2 150 | 4 319 |
+| Adaptatif (mémoire) | 1 941 | -8,5 % [-8,6 ; -8,4] | 6 750 | 2 422 | 4 218 |
+| Adaptatif v2 | 2 106 | -0,8 % [-0,8 ; -0,7] | 5 534 | 1 890 | 3 872 |
+
+#### Alternance sous la capacité (J1 aux phases corrigées, 1 736 véhicules, Y = 0,72)
+
+| Politique | Retard total moyen (s) | Écart vs feux fixes | Vidage (s) | Sortis à 1 800 s | Sortis à 3 600 s |
+|---|---:|---:|---:|---:|---:|
+| Feux fixes | 100 | référence | 2 639 | 1 204 | 1 736 |
+| Plan Webster | 87 | -13,4 % [-14,2 ; -12,6] | 2 597 | 1 220 | 1 736 |
+| Adaptatif (mémoire) | 8 | -92,1 % [-92,2 ; -92,0] | 2 422 | 1 288 | 1 736 |
+| Adaptatif v2 | 22 | -78,0 % [-78,6 ; -77,5] | 2 451 | 1 279 | 1 736 |
+
+
+**Lecture.** Sur un carrefour correctement défini, la commande adaptative réduit nettement
+le retard : de 22 % avec la demande du mémoire et de 78 % avec une demande qui alterne
+entre les axes sous la capacité (orchestrateur v2). En saturation extrême (J1 aux phases
+du mémoire, Solibra), aucun plan de feux ne crée de capacité et les écarts restent faibles ;
+l’orchestrateur v2 vide toutefois Solibra plus tôt (5 534 s contre 7 486 s). Une partie de
+l’avance de l’orchestrateur du mémoire sur la v2 vient de l’absence de phase orange.
 
 ### Phase B, tableau 3.5 (120 s, flux de contrôle à 200 kbit/s, 16 Mbit/s de fond sur 5 Mbit/s)
 

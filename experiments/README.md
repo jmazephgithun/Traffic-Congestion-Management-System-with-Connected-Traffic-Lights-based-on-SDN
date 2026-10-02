@@ -235,6 +235,7 @@ signalée comme telle, jamais complétée.
 
 | Cible | Objet | Sortie |
 |---|---|---|
+| `make evaluation-equitable` | Comparaison des politiques de feux à base égale, sur 30 graines et 4 scénarios | `evaluation-equitable.json`, `.md` |
 | `make demo` | Démonstration visuelle commentée sur la carte réelle de Solibra | `demo.html`, `interpretation.md` |
 | `make gui` | Interface graphique réelle de SUMO dans le navigateur, feux pilotés en direct | http://localhost:6080 |
 | `make test-secteurs` | Contrôleurs par secteur, Abidjan Nord et Abidjan Sud, chacun avec un secours | `secteurs.json`, `secteurs/` |
@@ -280,6 +281,38 @@ et le fond de carte est `solibra_fond_osm.png`. Ce carrefour absorbe sans encomb
 - `make replay` rejoue côte à côte, sur le carrefour J1 du mémoire, les trajectoires
   réellement simulées sous les trois politiques (feux fixes, Webster, adaptatif).
 
+### 4.4 Évaluation à base égale et orchestrateur v2
+
+**Pourquoi.** En reproduisant le mémoire, le banc a relevé trois points de protocole,
+détaillés dans [VALIDATION.md](VALIDATION.md) :
+
+1. les feux fixes sont arrêtés à 3 600 s, alors que la simulation adaptative continue
+   jusqu’à la sortie du dernier véhicule ;
+2. le programme de feux du carrefour J1 (`one_junction.add.xml`, états `GGrr`/`rrGG`) met
+   au vert Nord + Est puis Sud + Ouest, des mouvements qui se croisent, au lieu de
+   Nord + Sud puis Est + Ouest ;
+3. l’orchestrateur du mémoire passe d’un vert à l’autre sans phase orange.
+
+Le niveau 1 conserve ce protocole pour reproduire les valeurs publiées. `make
+evaluation-equitable` compare les politiques sur une base loyale : chaque simulation va
+jusqu’à la sortie du dernier véhicule, et l’on mesure le **retard total** de chaque véhicule
+(attente avant d’entrer dans le réseau + temps perdu dans le réseau), la durée de vidage et
+les véhicules sortis à 1 800 s et 3 600 s, sur 30 graines appariées.
+
+| Scénario | Description |
+|---|---|
+| `j1` | Carrefour J1 et programme du mémoire, tels quels |
+| `j1_corrige` | Même réseau et même demande, phases corrigées (`one_junction_corrige.add.xml`) |
+| `solibra` | Carrefour réel de Solibra, demande recalibrée (saturé) |
+| `alternance` | J1 aux phases corrigées, demande alternant entre les axes, sous la capacité (Y = 0,72, `routes_alternance.rou.xml`) |
+
+Politiques comparées : feux fixes, plan Webster (calculé pour chaque scénario quand il
+existe), orchestrateur du mémoire, et **orchestrateur v2** (`pyfilesTrue/tls_orchestrator_v2.py`).
+La v2 garde l’interface de l’original et corrige ses limites : elle compte aussi les
+véhicules qui attendent d’entrer dans le réseau, rend le vert dès que l’axe servi est vide,
+ne le donne jamais à un axe vide, et respecte la phase orange du programme. Les résultats
+mesurés figurent dans [VALIDATION.md](VALIDATION.md).
+
 ## 5. Paramètres
 
 | Variable | Défaut | Rôle |
@@ -294,6 +327,7 @@ et le fond de carte est `solibra_fond_osm.png`. Ce carrefour absorbe sans encomb
 | `SUMO_CFG` | carrefour de Solibra | Configuration ouverte par `make gui` |
 | `MODE` | `adaptatif` | `make gui` : `adaptatif` ou `fixe` |
 | `SUMO_DELAY` | `60` | `make gui` : délai entre deux pas affichés, en ms |
+| `SEEDS` | `42,1-29` | `make evaluation-equitable` : graines (ex. `SEEDS=42` pour un essai rapide) |
 
 Exemple : `BW_EDGE=3 DELAY_EDGE=20ms DURATION=60 make test-b2`.
 
@@ -312,6 +346,7 @@ Tout est écrit dans `results_docker/`, monté depuis l’hôte et exclu de Git.
 | `rapport_memoire.md` | Rapport consolidé du niveau 1 |
 | `secteurs.json`, `secteurs/` | Résultat et journaux du prototype par secteur |
 | `demo.html`, `interpretation.md` | Démonstration visuelle et interprétation automatique |
+| `evaluation-equitable.json`, `.md` | Comparaison à base égale, par scénario et par politique |
 | `datapath.txt` | Datapath Open vSwitch utilisé en phase B (`system` ou `netdev`) |
 
 ## 7. Organisation du code
@@ -329,7 +364,7 @@ experiments/
 │   ├── tests_phase_b.sh      # contrôle rapide (make smoke)
 │   ├── test_secteurs.sh      # niveau 2 : contrôleurs par secteur avec secours
 │   └── gui/                  # niveau 2 : sumo-gui piloté en direct, via noVNC
-├── pyfilesTrue/              # orchestrateur, application Ryu, topologie Mininet-WiFi d'origine
+├── pyfilesTrue/              # orchestrateurs (mémoire et v2), application Ryu, topologie Mininet-WiFi
 ├── scripts/                  # campagnes, boucle fermée, rapport, démonstration, rejeu, Solibra
 ├── sumo_one_junction/        # réseaux et demandes SUMO (synthétique, Webster, Solibra)
 ├── tools/                    # analyseurs iperf et SUMO
@@ -349,10 +384,10 @@ experiments/
   file courte limite le retard, une file longue limite les pertes.
 - Sans module `openvswitch` sur l’hôte, la phase B retombe sur le datapath en espace
   utilisateur : la connectivité et OpenFlow restent testés, mais pas l’effet de la QoS.
-- Horizon de simulation : le protocole du mémoire simule les feux fixes jusqu’à 3 600 s,
-  alors que l’orchestrateur adaptatif fait avancer SUMO jusqu’à la sortie du dernier
-  véhicule. À horizon égal, l’écart d’écoulement entre les deux politiques est faible ;
-  voir le point de vigilance de [VALIDATION.md](VALIDATION.md).
+- Protocole du mémoire : horizon de simulation inégal, phases du carrefour J1 qui se
+  croisent et absence de phase orange dans l’orchestrateur (section 4.4). Le niveau 1 les
+  conserve pour reproduire les valeurs publiées ; `make evaluation-equitable` donne la
+  comparaison à base égale.
 - Le prototype par secteur valide le mécanisme de basculement sur deux ponts émulés ;
   il ne dimensionne pas un réseau réel de plusieurs centaines de carrefours.
 

@@ -1,7 +1,7 @@
 .PHONY: help build test smoke memoire evolue all-tests \
         test-a1 test-a1w test-a2 test-a3 evaluate evaluate-30 \
         test-b1 test-b2 test-b3 test-c test-c30 rapport test-d \
-        test-solibra replay gui test-secteurs demo clean
+        test-solibra replay gui test-secteurs demo evaluation-equitable clean
 
 COMPOSE := docker compose
 RUN     := $(COMPOSE) run --rm
@@ -66,6 +66,11 @@ memoire: build test test-a3 evaluate-30 test-a1w test-b1 test-b2 test-c test-c30
 	@echo "Niveau 1 termine : results_docker/rapport_memoire.md"
 
 # ---------------------------------------------------------------- niveau 2
+# Comparaison a base egale : chaque simulation va jusqu'a la sortie du dernier vehicule.
+SEEDS ?= 42,1-29
+evaluation-equitable: results_docker
+	$(RUN_SIM) lab python scripts/evaluation_equitable.py --seeds $(SEEDS) --output results_docker/evaluation-equitable.json
+
 test-solibra: results_docker
 	$(RUN_SIM) lab python scripts/evaluate.py --plan solibra --seeds 42,1-29 --output results_docker/solibra-30.json
 
@@ -83,7 +88,7 @@ gui:
 test-secteurs: results_docker
 	$(RUN_SIM) lab bash docker/test_secteurs.sh
 
-evolue: build test-secteurs test-solibra replay demo
+evolue: build evaluation-equitable test-secteurs test-solibra replay demo
 	@echo "Niveau 2 termine : demo.html, secteurs.json, solibra-30.json, replay.html ; en direct : make gui"
 
 all-tests: memoire evolue

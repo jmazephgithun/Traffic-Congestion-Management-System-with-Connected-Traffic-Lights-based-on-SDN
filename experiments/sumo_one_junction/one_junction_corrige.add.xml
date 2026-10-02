@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!--
+      Phases CORRIGEES du carrefour J1 (option evoluee du depot).
+      Indices de lien du reseau : 0 = Nord, 1 = Est, 2 = Sud, 3 = Ouest.
+      Le programme du memoire (one_junction.add.xml, etats "GGrr" / "rrGG") met au vert
+      Nord + Est puis Sud + Ouest, c est-a-dire des mouvements qui se croisent. Ici, la
+      phase 0 sert Nord + Sud ("GrGr") et la phase 2 Est + Ouest ("rGrG"), comme le
+      programme d origine du reseau. Les durees sont inchangees : 31 s de vert, 5 s d orange.
+    -->
+    <tlLogic id="J1" type="static" programID="prog1_corrige" offset="0">
+    <phase duration="31" state="GrGr"/>
+    <phase duration="5"  state="yryr"/>
+    <phase duration="31" state="rGrG"/>
+    <phase duration="5"  state="ryry"/>
+    </tlLogic>
+</additional>

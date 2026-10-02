@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<additional xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/additional_file.xsd">
+    <!--
+      Plan fixe calcule par Webster, phases corrigees (Nord + Sud, puis Est + Ouest), pour le scenario « alternance sous la capacite »,
+      avec les memes hypotheses que pour le memoire (L = 18 s, s = 1 800 veh/h par voie).
+
+      Sur l horizon, chaque axe recoit en moyenne (1 000 + 300) / 2 = 650 veh/h par approche :
+        y_NS = y_EW = 650 / 1800 = 0,361      Y = 0,722
+        C = (1,5 x 18 + 5) / (1 - 0,722) = 32 / 0,278 = 115 s, arrondi a 114 s
+        vert effectif total Ge = 114 - 18 = 96 s, reparti 48 s / 48 s
+        vert affiche = 48 + 4 = 52 s
+      Cycle programme : 52 + 5 + 52 + 5 = 114 s.
+    -->
+    <tlLogic id="J1" type="static" programID="webster" offset="0">
+    <phase duration="52" state="GrGr"/>
+    <phase duration="5"  state="yryr"/>
+    <phase duration="52" state="rGrG"/>
+    <phase duration="5"  state="ryry"/>
+    </tlLogic>
+</additional>

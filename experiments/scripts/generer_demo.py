@@ -160,8 +160,29 @@ def interpretation(sims):
         texte += (" Réserve de méthode : dans ce protocole, les feux fixes sont arrêtés à 3 600 s alors que "
                   "la simulation adaptative continue jusqu’à la sortie du dernier véhicule ; à horizon égal "
                   "(3 600 s), l’écart d’écoulement est faible (974 contre 979 véhicules sur la graine 42). "
-                  "La comparaison sur la carte ci-dessus, elle, est faite à horizon égal.")
+                  "Le programme de feux de J1 met en outre au vert des mouvements qui se croisent (Nord + Est, "
+                  "puis Sud + Ouest), ce qui divise sa capacité. La comparaison sur la carte ci-dessus est faite à "
+                  "horizon égal, et le paragraphe suivant donne la comparaison à base égale.")
         P.append(texte)
+    eq = charger("evaluation-equitable.json")
+    if eq:
+        sy = eq["synthese"]
+        def ecart(sc, pol):
+            b = sy.get(sc, {}).get(pol, {}).get("ecart_retard_vs_fixe_pct")
+            return None if b is None else b["moyenne"]
+        morceaux = []
+        for sc, lib in (("j1_corrige", "sur le carrefour J1 aux phases corrigées (demande du mémoire)"),
+                        ("alternance", "sur une demande qui alterne entre les axes sous la capacité"),
+                        ("solibra", "sur le carrefour réel de Solibra, saturé")):
+            v2, v1 = ecart(sc, "adaptatif_v2"), ecart(sc, "adaptatif_memoire")
+            if v2 is not None:
+                morceaux.append(f"{lib}, {fr(-v2)} % de retard en moins pour l’orchestrateur v2"
+                                + (f" ({fr(-v1)} % pour celui du mémoire)" if v1 is not None else ""))
+        if morceaux:
+            P.append("Comparaison à base égale (toutes les simulations jusqu’à la sortie du dernier véhicule, "
+                     f"{len(eq['protocole']['graines'])} graines) : " + " ; ".join(morceaux) + ". "
+                     "La commande adaptative réduit nettement le retard tant que le carrefour n’est pas saturé "
+                     "au-delà de sa capacité ; en saturation extrême, aucun plan de feux ne crée de capacité.")
     n0 = (charger("ctrl_noqos.json") or {}).get("summary")
     n1 = (charger("ctrl_qos.json") or {}).get("summary")
     if n0 and n1:
