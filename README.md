@@ -5,6 +5,13 @@
 Ce dépôt présente une solution de gestion adaptative de la congestion combinant
 SUMO/TraCI, un orchestrateur de feux, Ryu/OpenFlow et Open vSwitch avec QoS HTB.
 
+## Mémoire
+
+Le mémoire de Master, dans sa version finale corrigée après la soutenance du
+25 septembre 2026, est disponible en PDF :
+[`memoire/MEMOIRE_ACHI_FINAL_CORRIGE_20261002.pdf`](memoire/MEMOIRE_ACHI_FINAL_CORRIGE_20261002.pdf)
+(ACHI Jean Martial Zéphirin, Université Virtuelle de Côte d’Ivoire, 80 pages).
+
 ## Expérimentation reproductible
 
 Le banc conteneurisé se trouve dans [`experiments/`](experiments/README.md). Il est
@@ -46,6 +53,7 @@ le banc conteneurisé sous `experiments/`.
 
 ```text
 .
+├── memoire/                # mémoire final corrigé (PDF)
 ├── experiments/           # version reproductible et maintenue
 │   ├── docker/             # image, démarrage et scénarios réseau
 │   ├── pyfilesTrue/        # orchestrateur et contrôleur Ryu
